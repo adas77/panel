@@ -1,6 +1,8 @@
 import React, { createContext, useContext, useState } from 'react'
 import { Navigate } from 'react-router-dom'
-import Navigation from './Navigation'
+import Button from '../components/atoms/Button'
+import Navigation from '../components/molecules/Navigation'
+import OrderSidebar from '../components/molecules/OrderSidebar'
 
 const Login = () => {
     const CORRECT_USER: string = "admin"
@@ -35,6 +37,8 @@ const Login = () => {
     return (
         <div className="App">
             {isAuth && <Navigate to={'/'} />}
+            <OrderSidebar />
+            <Button variant='outline'>fxges</Button>
             <Navigation />
             <form onSubmit={e => handleForm(e)}>
                 <div>

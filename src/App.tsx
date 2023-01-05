@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import './App.css';
-import Login, { GlobalAuthContext } from './pages/Login';
 import Error from './pages/Error';
+import Login, { GlobalAuthContext } from './pages/Login';
 import PrivateRoute from './pages/PrivateRoute';
 
 function App() {
