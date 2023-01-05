@@ -1,25 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useState } from 'react';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import './App.css';
+import Login, { GlobalAuthContext } from './pages/Login';
+import Error from './pages/Error';
+import PrivateRoute from './pages/PrivateRoute';
 
 function App() {
+
+  const [isAuth, setIsAuth] = useState<boolean>(false);
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <PrivateRoute />,
+      errorElement: <Error />
+    },
+    {
+      path: "/login",
+      element: <Login />,
+    },
+
+  ]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GlobalAuthContext.Provider value={{ isAuth, setIsAuth }}>
+      <RouterProvider router={router} />
+    </GlobalAuthContext.Provider>
   );
 }
 
