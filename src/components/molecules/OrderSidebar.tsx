@@ -4,10 +4,13 @@ import Sidebar from '../atoms/Sidebar'
 type Props = {}
 
 const OrderSidebar = (props: Props) => {
+    const fullPath=(childPath:string)=>{
+        return `orders/${childPath}`
+    }
     const data = [
-        { label: 'Unpaid', path: '/unpaid' },
-        { label: 'Not Sent', path: '/notsent' },
-        { label: 'Returns', path: '/returns' },
+        { label: 'Unpaid', path: '/unpaid', quantity: 4 },
+        { label: 'Unsent', path: '/unsent' },
+        { label: 'Returns', path: '/returns', quantity: 2 },
     ];
     return (
         <Sidebar data={data} />

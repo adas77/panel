@@ -1,16 +1,15 @@
-import Navigation from '../molecules/Navigation'
-import Opinion from '../molecules/Opinion'
 import useOpinons from '../../hooks/useOpinons'
 import Button from '../atoms/Button'
+import Navigation from '../molecules/Navigation'
+import NavigationCopy from '../molecules/NavigationCopy'
+import Opinion from '../molecules/Opinion'
 
 const Opinions = () => {
     const { getFiveOpinions, getPositiveOpinions, getNegativeOpinions, opinionFetchState } = useOpinons()
     return (
         <>
             <Navigation />
-            <br />
-            <br />
-            <br />
+            {/* <NavigationCopy /> */}
             <Button variant='outline' onClick={e => getFiveOpinions()}>FIVE</Button>
             <Button variant='outline' onClick={e => getPositiveOpinions()}>POSITIVE</Button>
             <Button variant='outline' onClick={e => getNegativeOpinions()}>NEGATIVE</Button>
