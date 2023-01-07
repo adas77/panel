@@ -1,21 +1,20 @@
 import {
-    BarChart,
     Bar,
-    XAxis,
-    YAxis,
+    BarChart,
     CartesianGrid,
+    Legend,
     Tooltip,
-    Legend
+    XAxis,
+    YAxis
 } from "recharts";
+import useChart from '../../hooks/useChart';
 import Navigation from "../molecules/Navigation";
-import useChart from '../../hooks/useChart'
 import Button from "./Button";
 
 
 
 const ChartLine = () => {
     const { data, changeDay, changeWeek, switchShowSecondChart, showSecondChart } = useChart()
-    // data.map(d=>d.tradingTurnover)
     return (
         <>
             <Navigation />

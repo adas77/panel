@@ -1,14 +1,12 @@
 import { useState } from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import './App.css';
-import ChartLine from './components/atoms/ChartLine';
+import Charts from './components/organisms/Charts';
 import Opinions from './components/organisms/Opinions';
 import Orders from './components/organisms/Orders';
 import Error from './pages/Error';
 import Login, { GlobalAuthContext } from './pages/Login';
 import PrivateRoute from './pages/PrivateRoute';
-import ChartBar from './components/atoms/ChartBar';
-import Charts from './components/organisms/Charts';
 
 function App() {
 

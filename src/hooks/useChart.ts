@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 enum ChartViewType {
     DAY,
@@ -27,7 +27,6 @@ function genData(hours: number): ChartData[] {
     const hourToMillis: number = 60 * 60 * 1000
     const data: ChartData[] = []
     for (let index = 0; index < hours; index++) {
-        // const date:ChartData = new Date(nowMillis - index * hourToMillis)
         const date: ChartData = {
             date: new Date(nowMillis - index * hourToMillis),
             tradingTurnover: getRandomInt(0, TRADING_TURNOVER_MAX),
@@ -59,7 +58,6 @@ const useChart = () => {
     const changeDay = () => {
         const update = fetchData
             .filter((d) => d.date.getTime() >= (Date.now() - 24 * 60 * 60 * 1000))
-        // .map((d) => { return { ...d, date: d.date.getHours() } })
         setData(update)
         setChartView(ChartViewType.DAY)
     }
