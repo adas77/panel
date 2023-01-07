@@ -65,7 +65,7 @@ const Navigation = () => {
     }
     const advice: Lang = {
         pl: 'Porady',
-        eng: 'advice',
+        eng: 'Advice',
         href: '/advice'
     }
     const items = [order, quality, opinions, rankings, charts, advice]

@@ -4,6 +4,7 @@ import './App.css';
 import Error from './pages/Error';
 import Login, { GlobalAuthContext } from './pages/Login';
 import PrivateRoute from './pages/PrivateRoute';
+import Opinions from './components/organisms/Opinions';
 
 function App() {
 
@@ -18,6 +19,11 @@ function App() {
     {
       path: "/login",
       element: <Login />,
+    },
+    {
+      path: "/opinions",
+      element: <Opinions />,
+      errorElement: <Error />
     },
 
   ]);

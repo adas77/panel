@@ -1,17 +1,19 @@
 import React from 'react'
 import Image from '../atoms/Image'
+import dog from '../components/atoms/img/dog.jpg'
+import OpinionType from '../../types/OpinionType'
 
-type Props = {
-    src?: string,
-    alt: string,
-    rate: number,
-    name: string,
-    surname: string,
-    date: string,
-    description: string,
-}
+// type Props = {
+//     src?: string,
+//     alt: string,
+//     rate: number,
+//     name: string,
+//     surname: string,
+//     date: string,
+//     description: string,
+// }
 const MAX_RATE = 5
-const Opinion = (props: Props) => {
+const Opinion = (props: OpinionType) => {
     const person = `${props.name} ${props.surname}`
     let rate = props.rate
     if (props.rate > MAX_RATE) {
@@ -25,6 +27,7 @@ const Opinion = (props: Props) => {
         <>
 
             <div className="w-full max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+            {/* <div className="w-full max-w-sm min-w-[33%] bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700"> */}
                 <div className="flex items-center justify-between m-4">
                     <a href="#">
                         {/* <img className="p-8 rounded-t-lg" src={props.src} alt="product image" /> */}

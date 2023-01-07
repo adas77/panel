@@ -1,4 +1,3 @@
-import clsx from "clsx"
 import image from "./img/default.jpg"
 
 type imageVariant = "regular" | "circle"
@@ -18,7 +17,7 @@ const Image = ({
     src = image,
     ...props }: Props) => {
     return (
-        <img  className="rounded-full w-36 h-36 cursor-pointer hover:grayscale" src={src} alt="default"></img>
+        <img className="rounded-full w-36 h-36 cursor-pointer hover:grayscale" src={src} alt="default"></img>
     )
 }
 
