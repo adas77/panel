@@ -4,6 +4,7 @@ import './App.css';
 import Charts from './components/organisms/Charts';
 import Opinions from './components/organisms/Opinions';
 import Orders from './components/organisms/Orders';
+import Widgets from './components/organisms/Widgets';
 import Error from './pages/Error';
 import Login, { GlobalAuthContext } from './pages/Login';
 import PrivateRoute from './pages/PrivateRoute';
@@ -43,6 +44,11 @@ function App() {
       //   { path: "returns", element: <Orders /> },
 
       // ]
+    },
+    {
+      path: "/widgets",
+      element: <Widgets />,
+      errorElement: <Error />
     },
 
   ]);

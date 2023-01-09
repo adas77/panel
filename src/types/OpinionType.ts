@@ -1,4 +1,5 @@
 type OpinionType = {
+    widget?: boolean,
     src?: string,
     alt: string,
     rate: number,

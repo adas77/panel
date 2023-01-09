@@ -62,7 +62,12 @@ const Navigation = () => {
         eng: 'Login',
         href: '/login'
     }
-    const items = [order, quality, opinions, rankings, charts, advice, login]
+    const widgets: Lang = {
+        pl: 'Widgety',
+        eng: 'Widgets',
+        href: '/widgets'
+    }
+    const items = [widgets, order, quality, opinions, rankings, charts, advice, login]
 
     const [polish, setPolish] = useState(true)
 

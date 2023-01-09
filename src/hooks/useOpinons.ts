@@ -19,12 +19,12 @@ const useOpinons = () => {
     setOpinionFetchState(update)
 
   }
-  const getFiveOpinions = () => {
-    const update = opinions.slice(0, OpinionFetchState.ALL)
+  const getOpinions = (howMany?: number) => {
+    const update = opinions.slice(0, howMany || OpinionFetchState.ALL)
     setOpinionFetchState(update)
   }
 
-  return { getPositiveOpinions, getNegativeOpinions, getFiveOpinions, opinionFetchState }
+  return { getPositiveOpinions, getNegativeOpinions, getOpinions, opinionFetchState }
 }
 
 export default useOpinons
