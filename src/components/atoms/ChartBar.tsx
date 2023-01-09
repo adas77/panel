@@ -34,7 +34,7 @@ const ChartLine = () => {
                 }}
             >
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="date" />
+                <XAxis dataKey="name" />
                 <YAxis />
                 <Tooltip />
                 <Legend />
