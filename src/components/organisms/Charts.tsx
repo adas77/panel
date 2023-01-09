@@ -1,18 +1,17 @@
-import React from 'react'
-import Navigation from '../molecules/Navigation'
-import Button from '../atoms/Button'
 import useChart from '../../hooks/useChart'
-import ChartLine from '../atoms/ChartLine'
-import ChartBar from '../atoms/ChartBar'
+import Button from '../atoms/Button'
+import Chart from '../atoms/Chart'
+import Navigation from '../molecules/Navigation'
 
 
 const Charts = () => {
-    const { switchChartType, linear } = useChart()
+    const { data, switchChartType, linear } = useChart()
     return (
         <>
             <Navigation />
             <Button variant='outline' onClick={e => switchChartType()}>{linear ? 'Słupkowy' : 'Liniowy'}</Button>
-            {linear ? <ChartLine /> : <ChartBar />}
+            {/* {linear ? <ChartLine /> : <ChartBar />} */}
+            {linear ? <Chart linear w={1200} h={600} data={data} /> : <Chart w={1200} h={600} data={data} />}
         </>
     )
 }

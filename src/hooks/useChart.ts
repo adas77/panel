@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { fetchChartData } from '../data/chartDates'
 import { ChartData, ChartViewType } from '../types/ChartType'
 
@@ -10,6 +10,21 @@ const useChart = () => {
     const [chartView, setChartView] = useState<ChartViewType>(ChartViewType.DAY)
     const [showSecondChart, setShowSecondChart] = useState(false)
     const [linear, setLinear] = useState(true)
+    const [rerenderInTime, setRerenderInTime] = useState<number>(-1)
+
+    useEffect(() => {
+        changeDay()
+
+        return () => {
+        }
+    }, [])
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            rerenderInTime > 0 && setLinear(!linear)
+        }, rerenderInTime);
+        return () => clearTimeout(timer);
+    }, [linear]);
 
     const switchShowSecondChart = () => {
         setShowSecondChart(!showSecondChart)
@@ -17,6 +32,11 @@ const useChart = () => {
 
     const switchChartType = () => {
         setLinear(!linear)
+    }
+
+    const switchInTime = (millis: number) => {
+        setRerenderInTime(millis)
+
     }
 
     const changeDay = () => {
@@ -60,7 +80,7 @@ const useChart = () => {
         setChartView(ChartViewType.WEEK)
     }
 
-    return { data, chartView, changeDay, changeWeek, switchShowSecondChart, switchChartType, linear, showSecondChart }
+    return { data, chartView, changeDay, changeWeek, switchShowSecondChart, switchChartType, switchInTime, linear, showSecondChart }
 }
 
 export default useChart
