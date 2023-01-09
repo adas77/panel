@@ -1,6 +1,6 @@
 // import dog from '../../components/atoms/img/dog.jpg'
 import dog from '../components/atoms/img/dog.jpg'
-import OpinionType from '../types/OpinionType'
+import { OpinionType } from '../types/OpinionType'
 
 
 const opinion1: OpinionType = {

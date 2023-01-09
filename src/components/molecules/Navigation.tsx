@@ -12,11 +12,6 @@ type Lang = {
     href: string,
 }
 
-// type Langs = {
-//     map(): React.ReactNode
-//     items: Lang[]
-// }
-
 const NavigationItem = (props: Props) => {
     return (
         <li>
@@ -24,7 +19,6 @@ const NavigationItem = (props: Props) => {
         </li>
     )
 }
-
 
 const Navigation = () => {
     const order: Lang = {
@@ -94,7 +88,6 @@ const Navigation = () => {
             <br />
             <br />
         </>
-
     )
 }
 

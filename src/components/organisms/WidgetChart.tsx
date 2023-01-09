@@ -1,8 +1,7 @@
 import { ReactNode, useEffect } from 'react'
-// import { ChartLine } 
-import Widget from '../atoms/Widget'
-import Chart from '../atoms/Chart'
 import useChart from '../../hooks/useChart'
+import Chart from '../atoms/Chart'
+import Widget from '../atoms/Widget'
 
 type Props = {
     childComponent?: ReactNode

@@ -10,7 +10,6 @@ const Charts = () => {
         <>
             <Navigation />
             <Button variant='outline' onClick={e => switchChartType()}>{linear ? 'Słupkowy' : 'Liniowy'}</Button>
-            {/* {linear ? <ChartLine /> : <ChartBar />} */}
             {linear ? <Chart linear w={1200} h={600} data={data} /> : <Chart w={1200} h={600} data={data} />}
         </>
     )

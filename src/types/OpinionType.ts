@@ -1,4 +1,4 @@
-type OpinionType = {
+export type OpinionType = {
     widget?: boolean,
     src?: string,
     alt: string,
@@ -8,5 +8,3 @@ type OpinionType = {
     date: string,
     description: string,
 }
-
-export default OpinionType

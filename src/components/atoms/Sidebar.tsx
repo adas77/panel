@@ -1,9 +1,3 @@
-import { Link } from "react-router-dom"
-
-type buttonVariant = "regular" | "outline" | "ghost" | "link"
-type buttonSize = "regular" | "large" | "small"
-type buttonTheme = "light" | "dark"
-
 type Data = {
   quantity?: number,
   label: string,
@@ -14,23 +8,9 @@ interface Props {
   data: Data[]
 }
 
-const Sidebar = ({
-  data,
-  ...props }: Props) => {
+const Sidebar = (props: Props) => {
 
-  // const renderedLinks = data.map((d) => {
-  //   return (
-  //     <Link
-  //       key={d.label}
-  //       to={d.path}
-  //       className="mb-3"
-  //     >
-  //       {d.label}
-  //     </Link>
-  //   );
-  // });
-
-  const rLinks = data.map((d) => {
+  const rLinks = props.data.map((d) => {
     return (
       <li key={d.label}>
         <a href={d.path} className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">

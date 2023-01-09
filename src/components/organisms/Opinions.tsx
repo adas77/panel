@@ -14,8 +14,7 @@ const Opinions = () => {
             <br />
             <br />
             <div className='container flex flex-wrap gap-10'>
-                {opinionFetchState.map((o) => <Opinion key={o.date} src={o.src} alt={o.alt} rate={o.rate} name={o.name} surname={o.surname} date={o.date} description={o.description} />)}
-                {/* {opinionFetchState.map((o) => <Opinion key={o.date} widget src={o.src} alt={o.alt} rate={o.rate} name={o.name} surname={o.surname} date={o.date} description={o.description} />)} */}
+                {opinionFetchState.map((o, i) => <Opinion key={i} src={o.src} alt={o.alt} rate={o.rate} name={o.name} surname={o.surname} date={o.date} description={o.description} />)}
             </div>
         </>
     )
