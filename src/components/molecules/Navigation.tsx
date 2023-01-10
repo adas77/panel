@@ -93,7 +93,7 @@ const Navigation = () => {
                                 return <NavigationItem key={p.href} href={p.href} name={isPolish ? p.pl : p.eng} />
                             })}
                         </ul>
-                        <Button onClick={e => isAuth && cmdLogout()} variant='outline'><Link to={isAuth ? "/widget" : "/login"}>{isAuth ? logout.pl : login.pl}</Link></Button>
+                        <Button onClick={e => isAuth && cmdLogout()} variant='outline'><Link to={isAuth ? "/widgets" : "/login"}>{isAuth ? logout.pl : login.pl}</Link></Button>
 
                     </div>
                 </div>
