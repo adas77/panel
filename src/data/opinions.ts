@@ -1,106 +1,33 @@
-// import dog from '../../components/atoms/img/dog.jpg'
-import dog from '../components/atoms/img/dog.jpg'
+import imgDefault from '../components/atoms/img/default.jpg'
+import imgDog from '../components/atoms/img/dog.jpg'
+import imgPl from '../components/atoms/img/poland.jpg'
+import imgUsa from '../components/atoms/img/usa.jpg'
 import { OpinionType } from '../types/OpinionType'
+import { getRandomDate, getRandomInt } from '../utils/rand'
 
+const genOpinions = (howMany: number) => {
+    const opinions: OpinionType[] = []
 
-const opinion1: OpinionType = {
-    src: dog,
-    alt: 'dog',
-    rate: 0,
-    name: 'Adam',
-    surname: 'Pilewski',
-    date: new Date(1998, 11, 10, 11, 55, 32).toUTCString(),
-    description: 'Nam luctus nulla blandit sodales eleifend. Nullam facilisis augue eu felis ullamcorper iaculis in a turpis. Pellentesque hendrerit odio est, quis vulputate nisl convallis dapibus. Praesent semper, urna nec maximus sollicitudin, quam orci aliquet metus, nec placerat orci ex eu massa. Morbi rutrum ut urna a efficitur.'
+    const images: string[] = [imgPl, imgUsa, imgDog, imgDefault]
+    const names: string[] = ["Adam", "John", "Liam", "Noah", "Olivia", "Emma"]
+    const surnames: string[] = ["Pilewski", "Smith", "Brown", "Scott"]
 
-}
-const opinion2: OpinionType = {
-    alt: 'dog',
-    rate: 3,
-    name: 'Adam',
-    surname: 'Pilewski',
-    date: new Date(1998, 11, 10, 11, 55, 32).toUTCString(),
-    description: 'Nam luctus nulla blandit sodales eleifend. Nullam facilisis augue eu felis ullamcorper iaculis in a turpis. Pellentesque hendrerit odio est, quis vulputate nisl convallis dapibus. Praesent semper, urna nec maximus sollicitudin, quam orci aliquet metus, nec placerat orci ex eu massa. Morbi rutrum ut urna a efficitur.'
+    for (let i = 0; i < howMany; i++) {
+        const randImg = images[getRandomInt(0, images.length)]
+        opinions.push({
+            id: i,
+            alt: randImg,
+            src: randImg,
+            rate: getRandomInt(0, 6),
+            name: names[getRandomInt(0, names.length)],
+            surname: surnames[getRandomInt(0, surnames.length)],
+            date: getRandomDate(new Date(2012, 0, 1), new Date()),
+            description: 'Nam luctus nulla blandit sodales eleifend. Nullam facilisis augue eu felis ullamcorper iaculis in a turpis. Pellentesque hendrerit odio est, quis vulputate nisl convallis dapibus. Praesent semper, urna nec maximus sollicitudin, quam orci aliquet metus, nec placerat orci ex eu massa. Morbi rutrum ut urna a efficitur.'
+        })
+    }
 
-}
-const opinion3: OpinionType = {
-    src: dog,
-    alt: 'dog',
-    rate: 4,
-    name: 'Adam',
-    surname: 'Pilewski',
-    date: new Date(1998, 11, 10, 11, 55, 32).toUTCString(),
-    description: 'Nam luctus nulla blandit sodales eleifend. Nullam facilisis augue eu felis ullamcorper iaculis in a turpis. Pellentesque hendrerit odio est, quis vulputate nisl convallis dapibus. Praesent semper, urna nec maximus sollicitudin, quam orci aliquet metus, nec placerat orci ex eu massa. Morbi rutrum ut urna a efficitur.'
-
-}
-const opinion4: OpinionType = {
-    alt: 'dog',
-    rate: 2,
-    name: 'Adam',
-    surname: 'Pilewski',
-    date: new Date(1998, 11, 10, 11, 55, 32).toUTCString(),
-    description: 'Nam luctus nulla blandit sodales eleifend. Nullam facilisis augue eu felis ullamcorper iaculis in a turpis. Pellentesque hendrerit odio est, quis vulputate nisl convallis dapibus. Praesent semper, urna nec maximus sollicitudin, quam orci aliquet metus, nec placerat orci ex eu massa. Morbi rutrum ut urna a efficitur.'
-
-}
-const opinion5: OpinionType = {
-    src: dog,
-    alt: 'dog',
-    rate: 1,
-    name: 'Adam',
-    surname: 'Pilewski',
-    date: new Date(1998, 11, 10, 11, 55, 32).toUTCString(),
-    description: 'Nam luctus nulla blandit sodales eleifend. Nullam facilisis augue eu felis ullamcorper iaculis in a turpis. Pellentesque hendrerit odio est, quis vulputate nisl convallis dapibus. Praesent semper, urna nec maximus sollicitudin, quam orci aliquet metus, nec placerat orci ex eu massa. Morbi rutrum ut urna a efficitur.'
-
-}
-const opinion6: OpinionType = {
-    src: dog,
-    alt: 'dog',
-    rate: 3,
-    name: 'Adam',
-    surname: 'Pilewski',
-    date: new Date(1998, 11, 10, 11, 55, 32).toUTCString(),
-    description: 'Nam luctus nulla blandit sodales eleifend. Nullam facilisis augue eu felis ullamcorper iaculis in a turpis. Pellentesque hendrerit odio est, quis vulputate nisl convallis dapibus. Praesent semper, urna nec maximus sollicitudin, quam orci aliquet metus, nec placerat orci ex eu massa. Morbi rutrum ut urna a efficitur.'
-
-}
-const opinion7: OpinionType = {
-    alt: 'dog',
-    rate: 3,
-    name: 'Adam',
-    surname: 'Pilewski',
-    date: new Date(1998, 11, 10, 11, 55, 32).toUTCString(),
-    description: 'Nam luctus nulla blandit sodales eleifend. Nullam facilisis augue eu felis ullamcorper iaculis in a turpis. Pellentesque hendrerit odio est, quis vulputate nisl convallis dapibus. Praesent semper, urna nec maximus sollicitudin, quam orci aliquet metus, nec placerat orci ex eu massa. Morbi rutrum ut urna a efficitur.'
-
-}
-const opinion8: OpinionType = {
-    src: dog,
-    alt: 'dog',
-    rate: 4,
-    name: 'Adam',
-    surname: 'Pilewski',
-    date: new Date(1998, 11, 10, 11, 55, 32).toUTCString(),
-    description: 'Nam luctus nulla blandit sodales eleifend. Nullam facilisis augue eu felis ullamcorper iaculis in a turpis. Pellentesque hendrerit odio est, quis vulputate nisl convallis dapibus. Praesent semper, urna nec maximus sollicitudin, quam orci aliquet metus, nec placerat orci ex eu massa. Morbi rutrum ut urna a efficitur.'
-
-}
-const opinion9: OpinionType = {
-    src: dog,
-    alt: 'dog',
-    rate: 3,
-    name: 'Adam',
-    surname: 'Pilewski',
-    date: new Date(1998, 11, 10, 11, 55, 32).toUTCString(),
-    description: 'Nam luctus nulla blandit sodales eleifend. Nullam facilisis augue eu felis ullamcorper iaculis in a turpis. Pellentesque hendrerit odio est, quis vulputate nisl convallis dapibus. Praesent semper, urna nec maximus sollicitudin, quam orci aliquet metus, nec placerat orci ex eu massa. Morbi rutrum ut urna a efficitur.'
-
-}
-const opinion10: OpinionType = {
-    src: dog,
-    alt: 'dog',
-    rate: 5,
-    name: 'Adam',
-    surname: 'Pilewski',
-    date: new Date(1998, 11, 10, 11, 55, 32).toUTCString(),
-    description: 'Nam luctus nulla blandit sodales eleifend. Nullam facilisis augue eu felis ullamcorper iaculis in a turpis. Pellentesque hendrerit odio est, quis vulputate nisl convallis dapibus. Praesent semper, urna nec maximus sollicitudin, quam orci aliquet metus, nec placerat orci ex eu massa. Morbi rutrum ut urna a efficitur.'
-
+    return opinions
 }
 
-const opinions = [opinion1, opinion2, opinion3, opinion4, opinion5, opinion6, opinion7, opinion8, opinion9, opinion10]
-
+const opinions = genOpinions(35)
 export default opinions

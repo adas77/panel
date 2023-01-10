@@ -6,10 +6,10 @@ import Charts from './components/organisms/Charts';
 import Opinions from './components/organisms/Opinions';
 import Orders from './components/organisms/Orders';
 import Widgets from './components/organisms/Widgets';
-import Error from './pages/Error';
-import Login from './pages/Login';
-import PrivateRoute from './pages/PrivateRoute';
-import ProtectedRoute from './pages/ProtectedRoute';
+import Error from './components/pages/Error';
+import Login from './components/pages/Login';
+import PrivateRoute from './components/pages/PrivateRoute';
+import ProtectedRoute from './components/pages/ProtectedRoute';
 import { persistor, store } from './redux/store';
 
 function App() {

@@ -4,17 +4,18 @@ import Navigation from '../molecules/Navigation'
 import Opinion from '../molecules/Opinion'
 
 const Opinions = () => {
-    const { getOpinions, getPositiveOpinions, getNegativeOpinions, opinionFetchState } = useOpinons()
+    const { getPositiveOpinions, getNegativeOpinions, opinionFetchState, switchNewest, newest } = useOpinons()
     return (
         <>
             <Navigation />
-            <Button variant='outline' onClick={e => getOpinions()}>FIVE</Button>
-            <Button variant='outline' onClick={e => getPositiveOpinions()}>POSITIVE</Button>
-            <Button variant='outline' onClick={e => getNegativeOpinions()}>NEGATIVE</Button>
+            {/* <Button variant='outline' onClick={e => {getOpinions(true)}}>FIVE</Button> */}
+            <Button variant='outline' onClick={() => switchNewest()}>{newest ? 'Najnowesze' : 'Najstarsze'}</Button>
+            <Button variant='outline' onClick={() => getPositiveOpinions()}>POSITIVE</Button>
+            <Button variant='outline' onClick={() => getNegativeOpinions()}>NEGATIVE</Button>
             <br />
             <br />
             <div className='container flex flex-wrap gap-10'>
-                {opinionFetchState.map((o, i) => <Opinion key={i} src={o.src} alt={o.alt} rate={o.rate} name={o.name} surname={o.surname} date={o.date} description={o.description} />)}
+                {opinionFetchState.map((o) => <Opinion key={o.id} src={o.src} alt={o.alt} rate={o.rate} name={o.name} surname={o.surname} date={o.date} description={o.description} id={0} />)}
             </div>
         </>
     )

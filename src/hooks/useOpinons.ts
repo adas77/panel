@@ -12,11 +12,10 @@ const useOpinons = () => {
   const [opinionFetchState, setOpinionFetchState] = useState(opinions)
   const [opinionFetchIndex, setOpinionFetchIndex] = useState(OpinionFetchState.WIDGET)
   const [currentReview, setCurrentReview] = useState<number>(0)
+  const [newest, setNewest] = useState(true)
 
   useEffect(() => {
-    const mean = (opinionFetchState.
-      map((o) => o.rate).
-      reduce((a, b) => a + b, 0)) / opinionFetchState.length
+    const mean = (opinionFetchState.map((o) => o.rate).reduce((a, b) => a + b, 0)) / opinionFetchState.length
     setCurrentReview(mean)
     return () => {
     }
@@ -33,8 +32,16 @@ const useOpinons = () => {
     setOpinionFetchState(update)
 
   }
-  const getOpinions = (howMany?: number) => {
-    const update = opinions.slice(0, howMany || OpinionFetchState.ALL)
+
+  const switchNewest = () => {
+    setNewest(!newest)
+    getOpinions(newest)
+  }
+
+  const getOpinions = (oldest?: boolean, howMany?: number) => {
+    const update = opinions
+      .sort((a, b) => { return oldest ? a.date.getTime() - b.date.getTime() : b.date.getTime() - a.date.getTime() })
+      .slice(0, howMany || OpinionFetchState.ALL)
     setOpinionFetchState(update)
   }
 
@@ -54,6 +61,6 @@ const useOpinons = () => {
     }
   }
 
-  return { getPositiveOpinions, getNegativeOpinions, getOpinions, currentReview, nextOpinions, prevOpinions, opinionFetchState }
+  return { getPositiveOpinions, getNegativeOpinions, getOpinions, currentReview, nextOpinions, prevOpinions, opinionFetchState, switchNewest, newest }
 }
 export default useOpinons

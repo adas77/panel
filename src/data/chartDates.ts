@@ -1,5 +1,5 @@
 import { ChartData, SOLD_MAX, TRADING_TURNOVER_MAX } from '../types/ChartType'
-import getRandomInt from '../utils/rand'
+import {getRandomInt} from '../utils/rand'
 
 function genData(hours: number): ChartData[] {
     const nowMillis: number = Date.now()

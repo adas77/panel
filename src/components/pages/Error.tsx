@@ -1,5 +1,5 @@
 import { useRouteError } from "react-router-dom";
-import Navigation from "../components/molecules/Navigation";
+import Navigation from "../molecules/Navigation";
 
 const Error = () => {
     type RouteError = {

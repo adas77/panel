@@ -1,13 +1,10 @@
-import React, { createContext, useContext, useState } from 'react'
-import { Navigate } from 'react-router-dom'
-import Navigation from '../components/molecules/Navigation'
-import useGlobalDispatch from '../redux/actionCreators'
+import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
+import useGlobalDispatch from '../../redux/actionCreators'
+import Navigation from '../molecules/Navigation'
+
 
 const Login = () => {
-    const CORRECT_USER: string = "admin"
-    const CORRECT_PASS: string = "admin123"
-
     const [username, setUsername] = useState("")
     const [pass, setPass] = useState("")
 
@@ -16,11 +13,10 @@ const Login = () => {
         return [s.isAuth]
     })
 
-
     const handleForm = (event: React.SyntheticEvent) => {
         event.preventDefault()
         cmdLogin(username, pass)
-        
+
     }
 
     const handlePassword = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -53,19 +49,5 @@ const Login = () => {
 
     )
 }
-
-export type GlobalAuth = {
-    isAuth: boolean
-    isPoland: boolean
-    setIsAuth: (is: boolean) => void
-    setIsPoland: (is: boolean) => void
-}
-export const GlobalAuthContext = createContext<GlobalAuth>({
-    isAuth: false,
-    isPoland: true,
-    setIsAuth: () => { },
-    setIsPoland: () => { },
-})
-export const useGlobalAuthContext = () => useContext(GlobalAuthContext)
 
 export default Login
