@@ -1,18 +1,18 @@
-import { useState } from 'react';
+import { Provider } from 'react-redux';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { PersistGate } from 'redux-persist/integration/react';
 import './App.css';
 import Charts from './components/organisms/Charts';
 import Opinions from './components/organisms/Opinions';
 import Orders from './components/organisms/Orders';
 import Widgets from './components/organisms/Widgets';
 import Error from './pages/Error';
-import Login, { GlobalAuthContext } from './pages/Login';
+import Login from './pages/Login';
 import PrivateRoute from './pages/PrivateRoute';
+import ProtectedRoute from './pages/ProtectedRoute';
+import { persistor, store } from './redux/store';
 
 function App() {
-
-  const [isAuth, setIsAuth] = useState<boolean>(false);
-
   const router = createBrowserRouter([
     {
       path: "/",
@@ -24,9 +24,10 @@ function App() {
       element: <Login />,
       errorElement: <Error />
     },
+
     {
       path: "/opinions",
-      element: <Opinions />,
+      element: <ProtectedRoute ><Opinions /></ProtectedRoute>,
       errorElement: <Error />
     },
     {
@@ -39,9 +40,9 @@ function App() {
       element: <Orders />,
       errorElement: <Error />,
       // children: [
-      //   { path: "unpaid", element: <Orders /> },
-      //   { path: "unsent", element: <Orders /> },
-      //   { path: "returns", element: <Orders /> },
+      //   {path: "unpaid", element: <Orders /> },
+      //   {path: "unsent", element: <Orders /> },
+      //   {path: "returns", element: <Orders /> },
 
       // ]
     },
@@ -54,9 +55,11 @@ function App() {
   ]);
 
   return (
-    <GlobalAuthContext.Provider value={{ isAuth, setIsAuth }}>
-      <RouterProvider router={router} />
-    </GlobalAuthContext.Provider>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <RouterProvider router={router} />
+      </PersistGate>
+    </Provider>
   );
 }
 

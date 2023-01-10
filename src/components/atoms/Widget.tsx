@@ -8,7 +8,6 @@ type Props = {
 }
 
 const Widget = (props: Props) => {
-    {/* <div className="max-w-sm rounded overflow-hidden shadow-lg bg-sky-700"> */ }
     return (
         <div className="rounded overflow-hidden shadow-lg bg-sky-700">
             <div className="px-6 py-4">

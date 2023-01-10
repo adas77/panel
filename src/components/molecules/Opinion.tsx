@@ -15,7 +15,6 @@ const Opinion = (props: OpinionType) => {
 
     return (
         <div className="w-full max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
-            {/* <div className="w-full max-w-sm min-w-[33%] bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700"> */}
             {props.widget ||
                 <div className="flex items-center justify-between m-4">
                     <a href="#">
