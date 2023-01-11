@@ -1,14 +1,12 @@
 import { Provider } from 'react-redux';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
-import './App.css';
 import Charts from './components/organisms/Charts';
 import Opinions from './components/organisms/Opinions';
 import Orders from './components/organisms/Orders';
 import Widgets from './components/organisms/Widgets';
 import Error from './components/pages/Error';
 import Login from './components/pages/Login';
-import PrivateRoute from './components/pages/PrivateRoute';
 import ProtectedRoute from './components/pages/ProtectedRoute';
 import { persistor, store } from './redux/store';
 
@@ -16,7 +14,8 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <PrivateRoute />,
+      // element: <PrivateRoute />,
+      element: <Widgets />,
       errorElement: <Error />
     },
     {

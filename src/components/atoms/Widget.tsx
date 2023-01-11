@@ -9,7 +9,7 @@ type Props = {
 
 const Widget = (props: Props) => {
     return (
-        <div className="rounded overflow-hidden shadow-lg bg-sky-700">
+        <div className="rounded overflow-hidden shadow-lg bg-sky-500 dark:bg-sky-700">
             <div className="px-6 py-4">
                 <div className="font-bold text-xl mb-2 dark:text-white">
                     <a href={props.href}>
