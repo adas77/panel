@@ -14,6 +14,8 @@ const WidgetChart = (props: Props) => {
     const barChart = <Chart linear={false} w={800} h={400} data={data} />
     const SWITCH_TIME_MILLIS = props.switchTimeMillis || 3000
 
+    const dejta={href:'/charts',title:'Wykresy',tags:['Wzrosty','Spadki']}
+
     useEffect(() => {
         const timer = setTimeout(() => {
             switchChartType()
@@ -24,9 +26,9 @@ const WidgetChart = (props: Props) => {
     return (
         <>
             {linear ?
-                <Widget childComponent={linearChart} href={'/charts'} title={'Wykresy'} tags={["Wzrosty", "Trendy"]} />
+                <Widget childComponent={linearChart} href={dejta.href} title={dejta.title} tags={dejta.tags} />
                 :
-                <Widget childComponent={barChart} href={'/charts'} title={'Wykresy'} tags={["Wzrosty", "Trendy"]} />
+                <Widget childComponent={barChart} href={dejta.href} title={dejta.title} tags={dejta.tags} />
             }
         </>
     )
