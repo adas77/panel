@@ -1,13 +1,14 @@
+import useLang from '../../hooks/useLang';
 import { OrderWidgetData } from '../../types/OrderType';
 import Sidebar from '../atoms/Sidebar';
 type Props = {}
 
 const OrderSidebar = (props: Props) => {
-
+const {lang}=useLang()
     const data: OrderWidgetData[] = [
-        { label: 'Unpaid', path: '/unpaid', quantity: 4 },
-        { label: 'Unsent', path: '/unsent' },
-        { label: 'Returns', path: '/returns', quantity: 2 },
+        { label: lang.unpaid, path: '/unpaid', quantity: 4 },
+        { label: lang.unsent, path: '/unsent' },
+        { label: lang.returns, path: '/returns', quantity: 2 },
     ]
     return (
         <Sidebar data={data} />

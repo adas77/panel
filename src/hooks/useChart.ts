@@ -60,6 +60,7 @@ const useChart = () => {
         let sumTradingTurnover = 0
         let sumSold = 0
         update.forEach(d => {
+            // TODO: fix
             if (d.date.getDay() === currTime?.getDay()) {
                 sumTradingTurnover += d.tradingTurnover
                 sumSold += d.sold

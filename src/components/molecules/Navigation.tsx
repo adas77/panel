@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import useGlobalDispatch from '../../redux/actionCreators';
 import Button from '../atoms/Button';
 import LangSwitcher from './LangSwitcher';
+import useLang from '../../hooks/useLang';
 
 type Props = {
     href: string,
@@ -28,59 +29,13 @@ const NavigationItem = (props: Props) => {
 }
 
 const Navigation = () => {
-    const [isPolish, isAuth] = useSelector((s: GlobalState) => {
-        return [s.isPolish, s.isAuth]
+    const { lang } = useLang()
+    const [isAuth] = useSelector((s: GlobalState) => {
+        return [s.isAuth]
     })
     const { cmdLogout } = useGlobalDispatch()
 
-    const order: Lang = {
-        pl: 'Zamówienia',
-        eng: 'Orders',
-        href: '/orders'
-    }
-    const quality: Lang = {
-        pl: 'Jakość',
-        eng: 'Quality',
-        href: '/quality'
-    }
-    const opinions: Lang = {
-        pl: 'Opinie',
-        eng: 'Opinions',
-        href: '/opinions'
-    }
-    const rankings: Lang = {
-        pl: 'Rankingi',
-        eng: 'Rankings',
-        href: '/rankings'
-    }
-    const charts: Lang = {
-        pl: 'Wykresy',
-        eng: 'Charts',
-        href: '/charts'
-    }
-    const advice: Lang = {
-        pl: 'Porady',
-        eng: 'Advice',
-        href: '/advice'
-    }
-
-    const widgets: Lang = {
-        pl: 'Widgety',
-        eng: 'Widgets',
-        href: '/widgets'
-    }
-    const items = [widgets, order, quality, opinions, rankings, charts, advice]
-
-    const login: Lang = {
-        pl: 'Zaloguj',
-        eng: 'Login',
-        href: '/login'
-    }
-    const logout: Lang = {
-        pl: 'Wyloguj',
-        eng: 'Logout',
-        href: '/widgets'
-    }
+    const items = [{ href: '/widgets', name: lang.widgets }, { href: '/orders', name: lang.orders }, { href: '/quality', name: lang.quality }, { href: '/opinions', name: lang.opinions }, { href: '/rankings', name: lang.rankings }, { href: '/charts', name: lang.charts }, { href: '/advice', name: lang.advice }]
 
     return (
         <>
@@ -90,14 +45,15 @@ const Navigation = () => {
                     <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
                         <ul className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                             {items.map((p) => {
-                                return <NavigationItem key={p.href} href={p.href} name={isPolish ? p.pl : p.eng} />
+                                return <NavigationItem key={p.href} href={p.href} name={p.name} />
                             })}
                         </ul>
-                        <Button onClick={e => isAuth && cmdLogout()} variant='outline'><Link to={isAuth ? "/widgets" : "/login"}>{isAuth ? logout.pl : login.pl}</Link></Button>
+                        <Button onClick={e => isAuth && cmdLogout()} variant='outline'><Link to={isAuth ? "/widgets" : "/login"}>{isAuth ? lang.logout : lang.login}</Link></Button>
 
                     </div>
                 </div>
             </nav>
+            <br />
             <br />
             <br />
             <br />

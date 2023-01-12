@@ -13,8 +13,6 @@ const Widgets = (props: Props) => {
                 <WidgetOpinions />
                 <WidgetChart />
                 <WidgetOrder />
-                {/* <ProgressBar percent={80} />
-                <WidgetQuality /> */}
             </div>
         </>
     )

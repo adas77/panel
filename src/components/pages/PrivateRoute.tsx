@@ -23,7 +23,6 @@
 
 // export default PrivateRoute
 
-import React from 'react'
 
 const PrivateRoute = () => {
   return (

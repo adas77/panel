@@ -1,12 +1,14 @@
+import useLang from '../../hooks/useLang';
 import Widget from '../atoms/Widget';
 import OrderSidebar from '../molecules/OrderSidebar';
 
 const WidgetOrder = () => {
+    const { lang} = useLang()
     // TODO count zamówienia
     const tag = true ? "Sprawdź nowe zamówienia" : "Brak zamówień"
 
     return (
-        <Widget childComponent={<OrderSidebar />} href={'/orders'} title={'Zamówienia'} tags={[tag]} />
+        <Widget childComponent={<OrderSidebar />} href={'/orders'} title={lang.orders} tags={[tag]} />
     )
 }
 

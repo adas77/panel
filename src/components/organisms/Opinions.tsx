@@ -1,3 +1,4 @@
+import useLang from '../../hooks/useLang'
 import useOpinons from '../../hooks/useOpinons'
 import Button from '../atoms/Button'
 import Navigation from '../molecules/Navigation'
@@ -5,13 +6,13 @@ import Opinion from '../molecules/Opinion'
 
 const Opinions = () => {
     const { getPositiveOpinions, getNegativeOpinions, opinionFetchState, switchNewest, newest } = useOpinons()
+    const { lang } = useLang()
     return (
         <>
             <Navigation />
-            {/* <Button variant='outline' onClick={e => {getOpinions(true)}}>FIVE</Button> */}
-            <Button variant='outline' onClick={() => switchNewest()}>{newest ? 'Najnowesze' : 'Najstarsze'}</Button>
-            <Button variant='outline' onClick={() => getPositiveOpinions()}>POSITIVE</Button>
-            <Button variant='outline' onClick={() => getNegativeOpinions()}>NEGATIVE</Button>
+            <Button variant='outline' onClick={() => switchNewest()}>{newest ? lang.newest : lang.oldest}</Button>
+            <Button variant='outline' onClick={() => getPositiveOpinions()}>{lang.positive}</Button>
+            <Button variant='outline' onClick={() => getNegativeOpinions()}>{lang.negative}</Button>
             <br />
             <br />
             <div className='container flex flex-wrap gap-10'>
