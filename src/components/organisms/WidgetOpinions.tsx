@@ -18,6 +18,7 @@ const WidgetOpinions = (props: Props) => {
         }
     }, [])
 
+
     const rev = currentReview >= 4 ? ["Super", "Zadowoenie"] : currentReview >= 3 ? ["Nie jest źle"] : ["Niezadowolenie klientów"]
     const tags = [currentReview.toPrecision(2).toString()].concat(rev)
     const opininons = opinionFetchState.map((o) => <Opinion key={o.id} widget src={o.src} alt={o.alt} rate={o.rate} name={o.name} surname={o.surname} date={o.date} description={o.description} id={o.id} />)

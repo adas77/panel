@@ -9,47 +9,52 @@ import Error from './components/pages/Error';
 import Login from './components/pages/Login';
 import ProtectedRoute from './components/pages/ProtectedRoute';
 import { persistor, store } from './redux/store';
+import PrivateRoute from './components/pages/PrivateRoute';
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      // element: <PrivateRoute />,
-      element: <Widgets />,
-      errorElement: <Error />
+      element: <PrivateRoute />,
+      errorElement: <Error />,
+      children:
+        [
+          {
+            path: "/opinions",
+            element: <ProtectedRoute ><Opinions /></ProtectedRoute>,
+            errorElement: <Error />
+          },
+          {
+            path: "/charts",
+            element: <Charts />,
+            errorElement: <Error />
+          },
+          {
+            path: "/orders",
+            element: <Orders />,
+            errorElement: <Error />,
+            // children: [
+            //   {path: "unpaid", element: <Orders /> },
+            //   {path: "unsent", element: <Orders /> },
+            //   {path: "returns", element: <Orders /> },
+
+            // ]
+          },
+          {
+            path: "/widgets",
+            element: <Widgets />,
+            errorElement: <Error />
+          },
+        ]
     },
+
     {
       path: "/login",
       element: <Login />,
       errorElement: <Error />
     },
 
-    {
-      path: "/opinions",
-      element: <ProtectedRoute ><Opinions /></ProtectedRoute>,
-      errorElement: <Error />
-    },
-    {
-      path: "/charts",
-      element: <Charts />,
-      errorElement: <Error />
-    },
-    {
-      path: "/orders",
-      element: <Orders />,
-      errorElement: <Error />,
-      // children: [
-      //   {path: "unpaid", element: <Orders /> },
-      //   {path: "unsent", element: <Orders /> },
-      //   {path: "returns", element: <Orders /> },
 
-      // ]
-    },
-    {
-      path: "/widgets",
-      element: <Widgets />,
-      errorElement: <Error />
-    },
 
   ]);
 

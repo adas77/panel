@@ -2,9 +2,11 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import useGlobalDispatch from '../../redux/actionCreators'
 import Navigation from '../molecules/Navigation'
+import { Navigate, useLocation } from 'react-router-dom'
 
 
 const Login = () => {
+    const location = useLocation();
     const [username, setUsername] = useState("")
     const [pass, setPass] = useState("")
 
@@ -32,6 +34,7 @@ const Login = () => {
     return (
         <div className="App">
             {/* {isAuth && <Navigate to={'/'} />} */}
+            {isAuth && <Navigate to="/widgets" replace state={{ from: location }} />}
             <Navigation />
             <form onSubmit={e => handleForm(e)}>
                 <div>
