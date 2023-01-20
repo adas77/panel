@@ -33,7 +33,6 @@ const Login = () => {
 
     return (
         <div className="App">
-            {/* {isAuth && <Navigate to={'/'} />} */}
             {isAuth && <Navigate to="/widgets" replace state={{ from: location }} />}
             <Navigation />
             <form onSubmit={e => handleForm(e)}>
@@ -47,7 +46,6 @@ const Login = () => {
                 </div>
                 <button onSubmit={e => e.preventDefault()}>Login</button>
             </form>
-            {isAuth ? <p>Zalogowany</p> : <p>Niezaloogowany</p>}
         </div>
 
     )
