@@ -1,7 +1,7 @@
 import { ReactNode, useEffect } from 'react'
 import useChart from '../../hooks/useChart'
 import Chart from '../atoms/Chart'
-import Widget from '../template/Widget'
+import Widget from '../molecules/Widget'
 import useLang from '../../hooks/useLang'
 
 type Props = {

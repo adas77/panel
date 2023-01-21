@@ -1,4 +1,4 @@
-import Widget from '../template/Widget'
+import Widget from '../molecules/Widget'
 import useLang from '../../hooks/useLang'
 import Ranking from '../molecules/Ranking'
 import ranks from '../../data/rank'

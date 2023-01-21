@@ -13,13 +13,6 @@ type Props = {
     logout?: boolean
 }
 
-// type Lang = {
-//     pl: string,
-//     eng: string,
-//     href: string,
-//     logout?: boolean,
-// }
-
 const NavigationItem = (props: Props) => {
     const { cmdLogout } = useGlobalDispatch()
     return (
@@ -42,7 +35,7 @@ const Navigation = () => {
         <>
             <nav className="bg-white px-2 sm:px-4 py-2.5 dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
                 <div className="container flex flex-wrap items-center justify-between mx-auto">
-                    <div className='flex items-center'>
+                    <div className='flex items-center gap-x-4'>
                         <LangSwitcher />
                         <ThemeSwitcher />
                     </div>
@@ -57,11 +50,6 @@ const Navigation = () => {
                     </div>
                 </div>
             </nav>
-            {/* <br />
-            <br />
-            <br />
-            <br /> */}
-
         </>
     )
 }

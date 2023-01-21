@@ -1,5 +1,4 @@
 import clsx from 'clsx'
-import React from 'react'
 import { ReactNode } from 'react'
 
 type gapVariant = "regular" | "big" | "small"

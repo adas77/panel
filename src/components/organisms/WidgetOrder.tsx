@@ -1,5 +1,5 @@
 import useLang from '../../hooks/useLang';
-import Widget from '../template/Widget';
+import Widget from '../molecules/Widget';
 import OrderSidebar from '../molecules/OrderSidebar';
 
 const WidgetOrder = () => {

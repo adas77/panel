@@ -1,7 +1,7 @@
 import { ReactNode, useEffect } from 'react'
 import useLang from '../../hooks/useLang'
 import useOpinons, { OpinionFetchState } from '../../hooks/useOpinons'
-import Widget from '../template/Widget'
+import Widget from '../molecules/Widget'
 import Opinion from '../molecules/Opinion'
 
 type Props = {

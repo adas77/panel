@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import { useState } from 'react';
 import { DarkModeSwitch } from "react-toggle-dark-mode";
-import useTheme from '../../hooks/useTheme'
+import useTheme from '../../hooks/useTheme';
 type Props = {}
 
 const ModeSwitcher = (props: Props) => {
@@ -18,7 +18,6 @@ const ModeSwitcher = (props: Props) => {
     return (
         <>
             <DarkModeSwitch
-                style={{ marginBottom: "2rem" }}
                 checked={darkSide}
                 onChange={toggleDarkMode}
                 size={30}
