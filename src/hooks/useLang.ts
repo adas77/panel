@@ -44,6 +44,16 @@ const useLang = () => {
         oops: choose(["Oops!", "Upss!"]),
         errorOccur: choose(["Sorry, an unexpected error has occurred.", "Przepraszamy, napotkano niespodziewany błąd"]),
 
+        signIn: choose(["Sign in to your account", "Zaloguj się"]),
+        signUp: choose(["Sign up", "Zarejestruj się"]),
+        yourUsername: choose(["Your username", "Twój login"]),
+        yourPass: choose(["Your password", "Twoje hasło"]),
+        rememberMe: choose(["Remember me", "Pamiętaj mnie"]),
+        forgotPass: choose(["Forgot password?", "Odzyskaj hasło"]),
+        donHaveAccountYet: choose(["Don’t have an account yet?", "Nie masz jeszcze konta?"]),
+        passUsername: choose(["Write username", "Podaj login"]),
+        passPass: choose(["Write password", "Podaj hasło"]),
+
     }
 
     return { lang }

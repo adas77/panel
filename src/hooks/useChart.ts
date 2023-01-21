@@ -53,8 +53,7 @@ const useChart = () => {
     }
 
     const changeWeek = () => {
-        const update = fetchChartData.
-            filter((d) => d.date.getTime() >= (Date.now() - 7 * DAY_IN_MILLIS))
+        const update = fetchChartData.filter((d) => d.date.getTime() >= (Date.now() - 7 * DAY_IN_MILLIS))
         const updateWeek: ChartData[] = []
         let currTime = update.shift()?.date
         let sumTradingTurnover = 0

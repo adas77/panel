@@ -2,7 +2,7 @@ import clsx from "clsx"
 import { type ButtonHTMLAttributes, type ReactNode } from "react"
 
 type buttonVariant = "regular" | "outline" | "ghost" | "link"
-type buttonSize = "regular" | "large" | "small"
+type buttonSize = "regular" | "large" | "small" | "fullWidth"
 type buttonTheme = "light" | "dark"
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -28,6 +28,7 @@ const Button = ({
                 size === "large" && "px-5 py-3 text-base",
                 size === "regular" && "px-4 py-2 text-sm",
                 size === "small" && "px-2 py-2",
+                size === "fullWidth" && "w-full py-3",
                 variant === "regular" &&
                 "bg-brand text-white hover:bg-brand-dark disabled:hover:bg-brand",
                 variant === "outline" &&

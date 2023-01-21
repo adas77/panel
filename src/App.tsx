@@ -1,15 +1,14 @@
 import { Provider } from 'react-redux';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
-import Charts from './components/organisms/Charts';
-import Opinions from './components/organisms/Opinions';
+import Charts from './components/pages/Charts';
+import Opinions from './components/pages/Opinions';
 import Orders from './components/organisms/Orders';
-import Widgets from './components/organisms/Widgets';
 import Error from './components/pages/Error';
 import Login from './components/pages/Login';
-import ProtectedRoute from './components/pages/ProtectedRoute';
-import { persistor, store } from './redux/store';
 import PrivateRoute from './components/pages/PrivateRoute';
+import Widgets from './components/pages/Widgets';
+import { persistor, store } from './redux/store';
 
 function App() {
   const router = createBrowserRouter([
@@ -21,7 +20,7 @@ function App() {
         [
           {
             path: "/opinions",
-            element: <ProtectedRoute ><Opinions /></ProtectedRoute>,
+            element: <Opinions />,
             errorElement: <Error />
           },
           {

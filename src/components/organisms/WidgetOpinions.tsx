@@ -1,8 +1,8 @@
 import { ReactNode, useEffect } from 'react'
+import useLang from '../../hooks/useLang'
 import useOpinons, { OpinionFetchState } from '../../hooks/useOpinons'
 import Widget from '../atoms/Widget'
 import Opinion from '../molecules/Opinion'
-import useLang from '../../hooks/useLang'
 
 type Props = {
     childComponent?: ReactNode
