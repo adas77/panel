@@ -1,11 +1,11 @@
 import { Provider } from 'react-redux';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
+import Orders from './components/pages/Orders';
 import Charts from './components/pages/Charts';
-import Opinions from './components/pages/Opinions';
-import Orders from './components/organisms/Orders';
 import Error from './components/pages/Error';
 import Login from './components/pages/Login';
+import Opinions from './components/pages/Opinions';
 import PrivateRoute from './components/pages/PrivateRoute';
 import Widgets from './components/pages/Widgets';
 import { persistor, store } from './redux/store';

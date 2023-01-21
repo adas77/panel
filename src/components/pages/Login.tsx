@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
-import useGlobalDispatch from '../../redux/actionCreators'
-import Navigation from '../molecules/Navigation'
 import { Navigate, useLocation } from 'react-router-dom'
-import useLang from '../../hooks/useLang'
-import Button from '../atoms/Button'
 import user1 from '../../data/auth'
+import useLang from '../../hooks/useLang'
+import useGlobalDispatch from '../../redux/actionCreators'
+import Button from '../atoms/Button'
+import Navigation from '../molecules/Navigation'
 
 
 const Login = () => {
@@ -32,7 +32,6 @@ const Login = () => {
 
     const handleUsername = (event: React.ChangeEvent<HTMLInputElement>) => {
         event.preventDefault()
-        event.target.value = event.target.value
         setUsername(event.target.value)
     }
 
@@ -66,7 +65,7 @@ const Login = () => {
                                             <label htmlFor="remember" className="text-gray-500 dark:text-gray-300">{lang.rememberMe}</label>
                                         </div>
                                     </div>
-                                    <a href="/forgot" className="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">{lang.forgotPass}</a>
+                                    <a href="/forgot" className="text-sm font-medium text-primary-600 hover:underline dark:text-white">{lang.forgotPass}</a>
                                 </div>
                                 <Button variant='outline' size='fullWidth'>{lang.login}</Button>
                                 <p className="text-sm font-light text-gray-500 dark:text-gray-400">

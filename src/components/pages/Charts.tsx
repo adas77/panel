@@ -1,6 +1,6 @@
 import useChart from '../../hooks/useChart'
 import useLang from '../../hooks/useLang'
-import DefaultLayout from '../_layout/DefaultLayout'
+import DefaultLayout from '../template/DefaultLayout'
 import Button from '../atoms/Button'
 import Chart from '../atoms/Chart'
 

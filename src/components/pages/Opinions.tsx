@@ -1,10 +1,9 @@
 import useLang from '../../hooks/useLang'
 import useOpinons from '../../hooks/useOpinons'
+import DefaultLayout from '../template/DefaultLayout'
+import Flex from '../template/Flex'
 import Button from '../atoms/Button'
-import Navigation from '../molecules/Navigation'
 import Opinion from '../molecules/Opinion'
-import DefaultLayout from '../_layout/DefaultLayout'
-import Flex from '../_layout/Flex'
 
 const Opinions = () => {
     const { getPositiveOpinions, getNegativeOpinions, opinionFetchState, switchNewest, newest } = useOpinons()

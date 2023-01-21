@@ -1,7 +1,6 @@
 import { useRouteError } from "react-router-dom";
-import Navigation from "../molecules/Navigation";
 import useLang from "../../hooks/useLang";
-import DefaultLayout from "../_layout/DefaultLayout";
+import DefaultLayout from "../template/DefaultLayout";
 
 const Error = () => {
     const { lang } = useLang()

@@ -1,23 +1,17 @@
-import clsx from 'clsx'
-type Props = {
-    percent: number
-}
-const ProgressBar = (props: Props) => {
-    const v = 'w-[' + props.percent.toString() + '%]'
-    return (
-        <div className="w-full px-4 lg:w-5/12">
-            <div className="mb-8">
-                <div className="bg-blue-200 relative h-4 w-full rounded-2xl">
-                    <div className={clsx(
-                        `bg-blue-500 absolute top-0 left-0 flex h-full  items-center justify-center rounded-2xl text-xs font-semibold text-white`,
-                        'w-[32%]'
-                    )}>
-                        32
-                    </div>
-                </div>
-            </div>
-        </div>
+import { RankingType } from '../../types/RankingType'
+import { formatPercent } from '../../utils/format'
 
+const ProgressBar = (props: RankingType) => {
+    return (
+        <dl>
+            <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">{props.category}</dt>
+            <dd className="flex items-center mb-3">
+                <div className="w-full bg-gray-200 rounded h-2.5 dark:bg-gray-700 mr-2">
+                    <div className="bg-blue-600 h-2.5 rounded dark:bg-blue-500" style={{ width: props.percent }}></div>
+                </div>
+                <span className="text-sm font-medium text-gray-500 dark:text-gray-400">{formatPercent(props.percent)}</span>
+            </dd>
+        </dl>
     )
 }
 

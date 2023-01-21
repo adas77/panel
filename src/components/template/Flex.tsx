@@ -12,7 +12,7 @@ type Props = {
 const Flex = ({ gap = 'regular', ...props }: Props) => {
     return (
         <div className={clsx(
-            'container mx-auto flex flex-wrap',
+            'container mx-auto flex flex-wrap justify-center',
             gap === 'regular' && 'gap-14',
             gap === 'big' && 'gap-20',
             gap === 'small' && 'gap-10',
