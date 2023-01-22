@@ -1,5 +1,7 @@
 import { OpinionType } from '../../types/OpinionType'
 import Image from '../atoms/Image'
+import dog from "./img/dog.jpg"
+
 import Rate from './Rate'
 
 const Opinion = (props: OpinionType) => {

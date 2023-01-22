@@ -1,6 +1,7 @@
 import { Provider } from 'react-redux';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
+import OffertsTable from './components/organisms/OffertsTable';
 import Orders from './components/pages/Orders';
 import Charts from './components/pages/Charts';
 import Error from './components/pages/Error';
@@ -38,6 +39,11 @@ function App() {
             //   {path: "returns", element: <Orders /> },
 
             // ]
+          },
+          {
+            path: "/rankings",
+            element: <OffertsTable />,
+            errorElement: <Error />
           },
           {
             path: "/widgets",

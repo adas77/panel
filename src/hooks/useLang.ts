@@ -50,9 +50,23 @@ const useLang = () => {
         yourPass: choose(["Your password", "Twoje hasło"]),
         rememberMe: choose(["Remember me", "Pamiętaj mnie"]),
         forgotPass: choose(["Forgot password?", "Odzyskaj hasło"]),
-        donHaveAccountYet: choose(["Don’t have an account yet?", "Nie masz jeszcze konta?"]),
+        donHaveAccountYet: choose(["Don't have an account yet?", "Nie masz jeszcze konta?"]),
         passUsername: choose(["Write username", "Podaj login"]),
         passPass: choose(["Write password", "Podaj hasło"]),
+
+        computer: choose(["Computer", "Komputer"]),
+        phone: choose(["Phone", "Telefon"]),
+        tv: choose(["TV", "Telewizor"]),
+        headphones: choose(["Headphones", "Słuchawki"]),
+        keyboard: choose(["Keyboard", "Klawiatura"]),
+
+        currency: choose(["USD", "PLN"]),
+        photo: choose(["Photo", "Zdjęcie"]),
+        sold: choose(["Sold", "Sprzedane"]),
+        turnOver: choose(["Turnover", "Obrót"]),
+        views: choose(["Views", "Wyświetlenia"]),
+
+
 
     }
 

@@ -1,14 +1,6 @@
+import { TableType } from '../../types/TableType'
 
-type Props = {
-  cols: string[]
-  rows: RowData[]
-}
-
-type RowData = {
-  items: string[]
-}
-
-const Table = (props: Props) => {
+const Table = (props: TableType) => {
   return (
     <div className="relative overflow-x-auto">
       <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
