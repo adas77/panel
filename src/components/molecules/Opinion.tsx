@@ -1,6 +1,5 @@
 import { OpinionType } from '../../types/OpinionType'
 import Image from '../atoms/Image'
-import dog from "./img/dog.jpg"
 
 import Rate from './Rate'
 
@@ -16,10 +15,11 @@ const Opinion = (props: OpinionType) => {
                     </a>
                     <span className="text-3xl font-bold text-gray-900 dark:text-white">{person}</span>
                 </div>}
-            <div className="px-5 pb-5">
+            <div className="w-72 px-5 pb-5">
                 {props.widget || <a href="/opinions">
                     <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{props.description}</h5>
                 </a>}
+                {/* <br /> */}
                 <Rate rate={props.rate} />
                 <span className="text font-bold text-gray-900 dark:text-white">{props.date.toUTCString()}</span>
             </div>

@@ -4,6 +4,7 @@ import WidgetChart from '../organisms/WidgetChart'
 import WidgetOpinions from '../organisms/WidgetOpinions'
 import WidgetOrder from '../organisms/WidgetOrder'
 import WidgetRankings from '../organisms/WidgetRankings'
+import OffertsTable from '../organisms/OffertsTable'
 
 type Props = {}
 
