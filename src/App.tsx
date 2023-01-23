@@ -50,6 +50,11 @@ function App() {
             element: <Widgets />,
             errorElement: <Error />
           },
+          {
+            path: "/",
+            element: <Widgets />,
+            errorElement: <Error />
+          },
         ]
     },
 

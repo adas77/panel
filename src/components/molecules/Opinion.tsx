@@ -1,3 +1,4 @@
+import clsx from "clsx"
 import { OpinionType } from '../../types/OpinionType'
 import Image from '../atoms/Image'
 
@@ -15,11 +16,13 @@ const Opinion = (props: OpinionType) => {
                     </a>
                     <span className="text-3xl font-bold text-gray-900 dark:text-white">{person}</span>
                 </div>}
-            <div className="w-72 px-5 pb-5">
+            <div className={clsx(
+                "px-5 pb-5",
+                props.widget && "w-72"
+            )}>
                 {props.widget || <a href="/opinions">
                     <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{props.description}</h5>
                 </a>}
-                {/* <br /> */}
                 <Rate rate={props.rate} />
                 <span className="text font-bold text-gray-900 dark:text-white">{props.date.toUTCString()}</span>
             </div>
