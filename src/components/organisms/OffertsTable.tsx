@@ -24,8 +24,18 @@ const OffertsTable = (props: Props) => {
 
     const [freq, setFreq] = useState(true)
 
+    
+
+    const m = (img: string) => {
+        return <div className="bg-0 bg-no-repeat bg-center"> <img className="bg-0 h-auto max-w-lg mx-auto bg-transparent w-12" src={img} alt="image description">
+        </img></div>
+    }
     const makeRow = (o: OffertsType) => {
-        return { items: [o.name, <Image src={o.img} />, o.sold, freq ? o.turnover : o.views] }
+        // return { items: [o.name, <Image src={o.img} />, o.sold, freq ? o.turnover : o.views] }
+        return {
+            items: [o.name, m(o.img)
+                , o.sold, freq ? o.turnover : o.views]
+        }
     }
     const rows: RowData[] = freq ? f.map((o: any) => makeRow(o)) : l.map((o: any) => makeRow(o))
     const cols = [lang.name, lang.photo, lang.sold, freq ? lang.turnOver : lang.views]

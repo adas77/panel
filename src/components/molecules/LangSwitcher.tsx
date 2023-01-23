@@ -13,9 +13,9 @@ const LangSwitcher = () => {
     return (
         <>
             {isPolish ?
-                <Image onClick={e => cmdSwitchLang()} src={pl} alt="pl" size='small' />
-                :
                 <Image onClick={e => cmdSwitchLang()} src={en} alt="en" size='small' />
+                :
+                <Image onClick={e => cmdSwitchLang()} src={pl} alt="pl" size='small' />
             }
         </>
     )
