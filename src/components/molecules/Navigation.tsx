@@ -6,6 +6,7 @@ import useGlobalDispatch from '../../redux/actionCreators';
 import Button from '../atoms/Button';
 import LangSwitcher from './LangSwitcher';
 import ThemeSwitcher from './ThemeSwitcher';
+import useAccount from '../../hooks/useAccount';
 
 type Props = {
     href: string,
@@ -23,11 +24,12 @@ const NavigationItem = (props: Props) => {
 }
 
 const Navigation = () => {
+    const { acc } = useAccount()
     const { lang } = useLang()
     const [isAuth] = useSelector((s: GlobalState) => {
         return [s.isAuth]
     })
-    const { cmdLogout } = useGlobalDispatch()
+    const { cmdLogout, cmdSwitchAccount } = useGlobalDispatch()
 
     const items = [{ href: '/widgets', name: lang.widgets }, { href: '/orders', name: lang.orders }, { href: '/quality', name: lang.quality }, { href: '/opinions', name: lang.opinions }, { href: '/rankings', name: lang.rankings }, { href: '/charts', name: lang.charts }, { href: '/advice', name: lang.advice }]
 
@@ -38,6 +40,7 @@ const Navigation = () => {
                     <div className='flex items-center gap-x-4'>
                         <LangSwitcher />
                         <ThemeSwitcher />
+                        <Button onClick={e => cmdSwitchAccount()}>Change Acc</Button>
                     </div>
                     <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
                         <ul className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">

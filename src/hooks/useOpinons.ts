@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
-import opinions from '../data/opinions'
+import useAccount from './useAccount'
+// import opinions from '../data/opinions'
 
 export enum OpinionFetchState {
   POSITIVE = 4,
@@ -9,7 +10,8 @@ export enum OpinionFetchState {
 }
 const useOpinons = () => {
 
-  const [opinionFetchState, setOpinionFetchState] = useState(opinions)
+  const { acc } = useAccount()
+  const [opinionFetchState, setOpinionFetchState] = useState(acc.opinions)
   const [opinionFetchIndex, setOpinionFetchIndex] = useState(OpinionFetchState.WIDGET)
   const [currentReview, setCurrentReview] = useState<number>(0)
   const [newest, setNewest] = useState(true)
@@ -23,12 +25,12 @@ const useOpinons = () => {
 
 
   const getPositiveOpinions = () => {
-    const update = opinions.filter((o) => o.rate >= OpinionFetchState.POSITIVE)
+    const update = acc.opinions.filter((o) => o.rate >= OpinionFetchState.POSITIVE)
     setOpinionFetchState(update)
 
   }
   const getNegativeOpinions = () => {
-    const update = opinions.filter((o) => o.rate <= OpinionFetchState.NEGATIVE)
+    const update = acc.opinions.filter((o) => o.rate <= OpinionFetchState.NEGATIVE)
     setOpinionFetchState(update)
 
   }
@@ -39,14 +41,14 @@ const useOpinons = () => {
   }
 
   const getOpinions = (oldest?: boolean, howMany?: number) => {
-    const update = opinions
+    const update = acc.opinions
       .sort((a, b) => { return oldest ? a.date.getTime() - b.date.getTime() : b.date.getTime() - a.date.getTime() })
       .slice(0, howMany || OpinionFetchState.ALL)
     setOpinionFetchState(update)
   }
 
   const nextOpinions = () => {
-    const update = opinions.slice(opinionFetchIndex, opinionFetchIndex + OpinionFetchState.WIDGET)
+    const update = acc.opinions.slice(opinionFetchIndex, opinionFetchIndex + OpinionFetchState.WIDGET)
     if (update.length > 0) {
       setOpinionFetchIndex(opinionFetchIndex + OpinionFetchState.WIDGET)
       setOpinionFetchState(update)
@@ -54,7 +56,7 @@ const useOpinons = () => {
   }
 
   const prevOpinions = () => {
-    const update = opinions.slice(opinionFetchIndex - 2 * OpinionFetchState.WIDGET, opinionFetchIndex - OpinionFetchState.WIDGET)
+    const update = acc.opinions.slice(opinionFetchIndex - 2 * OpinionFetchState.WIDGET, opinionFetchIndex - OpinionFetchState.WIDGET)
     if (update.length > 0) {
       setOpinionFetchIndex(opinionFetchIndex - OpinionFetchState.WIDGET)
       setOpinionFetchState(update)

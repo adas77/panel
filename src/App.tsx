@@ -31,14 +31,13 @@ function App() {
           },
           {
             path: "/orders",
-            element: <Orders />,
+            // element: <Orders type={'UNPAID'} />,
             errorElement: <Error />,
-            // children: [
-            //   {path: "unpaid", element: <Orders /> },
-            //   {path: "unsent", element: <Orders /> },
-            //   {path: "returns", element: <Orders /> },
-
-            // ]
+            children: [
+              { path: "/orders/unpaid", element: <Orders type={'UNPAID'} /> },
+              { path: "/orders/unsent", element: <Orders type={'UNSENT'} /> },
+              { path: "/orders/returns", element: <Orders type={'RETURN'} /> },
+            ]
           },
           {
             path: "/rankings",

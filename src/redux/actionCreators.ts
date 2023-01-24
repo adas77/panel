@@ -26,7 +26,13 @@ const useGlobalDispatch = () => {
         })
     }
 
-    return { cmdLogin, cmdLogout, cmdSwitchLang }
+    const cmdSwitchAccount = () => {
+        dispatch({
+            type: ActionType.ACC_SWITCH,
+        })
+    }
+
+    return { cmdLogin, cmdLogout, cmdSwitchLang, cmdSwitchAccount }
 
 }
 

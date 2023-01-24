@@ -4,6 +4,7 @@ import user1 from '../data/auth'
 const initialState: GlobalState = {
   isAuth: false,
   isPolish: true,
+  acc1: true,
 }
 
 const reducer = (state: GlobalState = initialState, action: Action): GlobalState => {
@@ -32,6 +33,13 @@ const reducer = (state: GlobalState = initialState, action: Action): GlobalState
         isAuth: false,
       }
       return authLoout
+
+    case ActionType.ACC_SWITCH:
+      let switchAcc: GlobalState = {
+        ...state,
+        acc1: state.acc1 ? false : true,
+      }
+      return switchAcc
 
   }
   return state

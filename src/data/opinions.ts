@@ -29,5 +29,10 @@ const genOpinions = (howMany: number) => {
     return opinions
 }
 
-const opinions = genOpinions(35)
-export default opinions
+// const opinions1 = genOpinions(36)
+// const opinions2 = genOpinions(36)
+// export default opinions1
+// export default opinions2
+
+export const opinions1 = genOpinions(36)
+export const opinions2 = genOpinions(72)

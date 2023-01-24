@@ -4,8 +4,6 @@ import useLang from '../../hooks/useLang'
 import { OffertsType } from '../../types/OffertsType'
 import { RowData } from '../../types/TableType'
 import Button from '../atoms/Button'
-import Image from '../atoms/Image'
-import Navigation from '../molecules/Navigation'
 import Table from '../molecules/Table'
 
 type Props = {}
@@ -40,14 +38,8 @@ const OffertsTable = (props: Props) => {
     const rows: RowData[] = freq ? f.map((o: any) => makeRow(o)) : l.map((o: any) => makeRow(o))
     const cols = [lang.name, lang.photo, lang.sold, freq ? lang.turnOver : lang.views]
 
-
     return (
         <>
-            <Navigation />
-            <br />
-            <br />
-            <br />
-            <br />
             <Button variant='outline' onClick={e => setFreq(!freq)}>change</Button>
             <Table cols={cols} rows={rows} />
         </>

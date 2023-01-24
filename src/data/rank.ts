@@ -19,5 +19,9 @@ const genRanks = () => {
     return ranks
 }
 
-const ranks = genRanks()
-export default ranks
+// const ranks = genRanks()
+// export default ranks
+
+
+export const ranks1 = genRanks()
+export const ranks2 = genRanks()

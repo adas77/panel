@@ -16,4 +16,5 @@ function genData(hours: number): ChartData[] {
     return data
 }
 
-export const fetchChartData = genData(10 * 24)
+export const chartData1 = genData(10 * 24)
+export const chartData2 = genData(3 * 24)

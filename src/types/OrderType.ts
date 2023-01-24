@@ -1,5 +1,21 @@
+import { type } from "os"
+
 export type OrderWidgetData = {
-    quantity?: number,
+    quantity: number,
     label: string,
     path: string,
 }
+
+export type OrderTypeData = {
+    orderNumber: number,
+    buyer: string,
+    quantity: number,
+    dateBought: Date,
+    datePaid?: Date,
+    dateSent?: Date,
+    returned?: boolean,
+}
+
+export type OrderStatus = 'UNPAID' | 'UNSENT' | 'RETURN'
+
+export type OrderReturnReason = 'BROKEN' | 'QUALITY' | 'USEFULNESS'

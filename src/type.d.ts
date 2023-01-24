@@ -17,7 +17,8 @@ type LangState = {
 
 type GlobalState = {
     isAuth: boolean,
-    isPolish: boolean
+    isPolish: boolean,
+    acc1: boolean,
 }
 
 

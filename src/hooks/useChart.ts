@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
-import { fetchChartData } from '../data/chartDates'
 import { ChartData, ChartViewType } from '../types/ChartType'
+import useAccount from './useAccount'
 
 const useChart = () => {
+    const { acc } = useAccount()
 
     const DAY_IN_MILLIS = 24 * 60 * 60 * 1000
 
@@ -43,7 +44,7 @@ const useChart = () => {
         const format = (d: Date) => ("0" + d.getDate()).slice(-2) + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" +
             d.getFullYear() + " " + ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2)
 
-        const updateDay = fetchChartData
+        const updateDay = acc.charts
             .filter((d) => d.date.getTime() >= (Date.now() - DAY_IN_MILLIS))
             .map((d) => { return { ...d, name: format(d.date) } })
 
@@ -53,7 +54,7 @@ const useChart = () => {
     }
 
     const changeWeek = () => {
-        const update = fetchChartData.filter((d) => d.date.getTime() >= (Date.now() - 7 * DAY_IN_MILLIS))
+        const update = acc.charts.filter((d) => d.date.getTime() >= (Date.now() - 7 * DAY_IN_MILLIS))
         const updateWeek: ChartData[] = []
         let currTime = update.shift()?.date
         let sumTradingTurnover = 0
