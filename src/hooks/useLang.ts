@@ -66,7 +66,10 @@ const useLang = () => {
         turnOver: choose(["Turnover", "Obrót"]),
         views: choose(["Views", "Wyświetlenia"]),
 
-
+        contentment: choose(["Contentment", "Zadowolenie"]),
+        sortByTime: choose(["Sort by time", "Posortuj po czasie"]),
+        search: choose(["Search", "Szukaj"]),
+        searchBySurname: choose(["Search by surname", "Szukaj po nazwisku"]),
 
     }
 

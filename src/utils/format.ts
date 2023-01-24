@@ -13,5 +13,5 @@ export function formatDate(date: Date, polish: boolean): string {
         timeZone: polish ? 'Europe/Warsaw' : 'America/Los_Angeles'
     });
 
-    return formatter.format(new Date());
+    return formatter.format(date);
 }

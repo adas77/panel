@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react'
 import useAccount from './useAccount'
+import { OpinionFetchState } from '../types/OpinionType'
 // import opinions from '../data/opinions'
 
-export enum OpinionFetchState {
-  POSITIVE = 4,
-  NEGATIVE = 3,
-  ALL = 5,
-  WIDGET = 3,
-}
+// export enum OpinionFetchState {
+//   POSITIVE = 4,
+//   NEGATIVE = 3,
+//   ALL = 5,
+//   WIDGET = 3,
+// }
 const useOpinons = () => {
 
   const { acc } = useAccount()
@@ -31,6 +32,12 @@ const useOpinons = () => {
   }
   const getNegativeOpinions = () => {
     const update = acc.opinions.filter((o) => o.rate <= OpinionFetchState.NEGATIVE)
+    setOpinionFetchState(update)
+
+  }
+
+  const getByNameOpinions = (phrase: string) => {
+    const update = acc.opinions.filter((o) => phrase.toLowerCase().includes(o.surname.toLowerCase()) || o.surname.toLowerCase().includes(phrase.toLowerCase()))
     setOpinionFetchState(update)
 
   }
@@ -63,6 +70,6 @@ const useOpinons = () => {
     }
   }
 
-  return { getPositiveOpinions, getNegativeOpinions, getOpinions, currentReview, nextOpinions, prevOpinions, opinionFetchState, switchNewest, newest }
+  return { getPositiveOpinions, getNegativeOpinions, getOpinions, currentReview, nextOpinions, prevOpinions, opinionFetchState, switchNewest, newest, getByNameOpinions }
 }
 export default useOpinons

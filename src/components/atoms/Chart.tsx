@@ -10,6 +10,7 @@ import {
     YAxis
 } from "recharts";
 import { ChartData } from "../../types/ChartType";
+import { useSelector } from "react-redux";
 
 type Props = {
     linear?: boolean,

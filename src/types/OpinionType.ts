@@ -9,3 +9,10 @@ export type OpinionType = {
     date: Date,
     description: string,
 }
+
+export enum OpinionFetchState {
+    POSITIVE = 4,
+    NEGATIVE = 3,
+    ALL = 5,
+    WIDGET = 3,
+  }

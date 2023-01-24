@@ -1,6 +1,7 @@
 import { ReactNode, useEffect } from 'react'
 import useLang from '../../hooks/useLang'
-import useOpinons, { OpinionFetchState } from '../../hooks/useOpinons'
+import useOpinons from '../../hooks/useOpinons'
+import { OpinionFetchState } from '../../types/OpinionType'
 import Widget from '../molecules/Widget'
 import Opinion from '../molecules/Opinion'
 import Flex from '../template/Flex'
