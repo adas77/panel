@@ -31,19 +31,15 @@ const useOpinons = () => {
         break;
 
       case "NEWEST":
-        setOpinionFetchState(acc.opinions.sort((a, b) => b.date.getTime() - a.date.getTime()).slice(0, OpinionFetchState.ALL))
+        setOpinionFetchState(acc.opinions.sort((a, b) => b.date.getTime() - a.date.getTime()).slice(0, OpinionFetchState.ALL + 3))
         break;
 
       case "OLDEST":
-        setOpinionFetchState(acc.opinions.sort((a, b) => a.date.getTime() - b.date.getTime()).slice(0, OpinionFetchState.ALL))
+        setOpinionFetchState(acc.opinions.sort((a, b) => a.date.getTime() - b.date.getTime()).slice(0, OpinionFetchState.ALL + 3))
         break;
 
       case "SEARCH":
         setOpinionFetchState(acc.opinions.filter((o) => search.toLowerCase().includes(o.surname.toLowerCase()) || o.surname.toLowerCase().includes(search.toLowerCase())))
-        break;
-
-      case "WIDGET":
-        setOpinionFetchState(acc.opinions.slice(0, 3))
         break;
 
       case "NEXT":

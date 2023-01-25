@@ -17,4 +17,4 @@ export enum OpinionFetchState {
     WIDGET = 3,
 }
 
-export type FetchState = "POSITIVE" | "NEGATIVE" | "NEWEST" | "OLDEST" | "ALL" | "SEARCH" | "WIDGET" | "NEXT"
+export type FetchState = "POSITIVE" | "NEGATIVE" | "NEWEST" | "OLDEST" | "ALL" | "SEARCH" | "NEXT"

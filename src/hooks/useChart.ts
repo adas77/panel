@@ -1,45 +1,30 @@
 import { useEffect, useState } from 'react'
 import { ChartData, ChartViewType } from '../types/ChartType'
 import useAccount from './useAccount'
+import { useSelector } from 'react-redux'
+import { formatDate } from '../utils/format'
 
 const useChart = () => {
     const { acc } = useAccount()
-
+    const [acc1, isPolish] = useSelector((s: GlobalState) => {
+        return [s.acc1, s.isPolish]
+    })
     const DAY_IN_MILLIS = 24 * 60 * 60 * 1000
 
     const [data, setData] = useState<ChartData[]>([])
     const [chartView, setChartView] = useState<ChartViewType>(ChartViewType.DAY)
     const [sold, setSold] = useState(true)
     const [turnOver, setTurnOver] = useState(true)
-    const [showSecondChart, setShowSecondChart] = useState(false)
     const [linear, setLinear] = useState(true)
-    const [rerenderInTime, setRerenderInTime] = useState<number>(-1)
 
     useEffect(() => {
         changeDay()
-
         return () => {
         }
-    }, [])
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            rerenderInTime > 0 && setLinear(!linear)
-        }, rerenderInTime);
-        return () => clearTimeout(timer);
-    }, [linear]);
-
-    const switchShowSecondChart = () => {
-        setShowSecondChart(!showSecondChart)
-    }
+    }, [acc1, isPolish])
 
     const switchChartType = () => {
         setLinear(!linear)
-    }
-
-    const switchInTime = (millis: number) => {
-        setRerenderInTime(millis)
-
     }
 
     const changeDay = () => {
@@ -48,7 +33,7 @@ const useChart = () => {
 
         const updateDay = acc.charts
             .filter((d) => d.date.getTime() >= (Date.now() - DAY_IN_MILLIS))
-            .map((d) => { return { ...d, name: format(d.date) } })
+            .map((d) => { return { ...d, name: formatDate(d.date, isPolish) } })
 
         updateDay.reverse()
         setData(updateDay)
@@ -75,7 +60,6 @@ const useChart = () => {
                 if (currTime) {
                     currTime.setTime(currTime.getTime() - DAY_IN_MILLIS)
                 }
-
             }
         });
         updateWeek.reverse()
@@ -83,7 +67,7 @@ const useChart = () => {
         setChartView(ChartViewType.WEEK)
     }
 
-    return { data, chartView, changeDay, changeWeek, switchShowSecondChart, switchChartType, switchInTime, linear, showSecondChart, setLinear, sold, setSold, turnOver, setTurnOver }
+    return { data, chartView, changeDay, changeWeek, switchChartType, linear, setLinear, sold, setSold, turnOver, setTurnOver }
 }
 
 export default useChart
