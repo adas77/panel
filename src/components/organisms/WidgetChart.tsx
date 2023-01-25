@@ -12,8 +12,10 @@ type Props = {
 const WidgetChart = (props: Props) => {
     const { data, linear, switchChartType } = useChart()
     const { lang } = useLang()
-    const linearChart = <Chart linear={true} w={800} h={400} data={data} sold turnOver />
-    const barChart = <Chart linear={false} w={800} h={400} data={data} sold turnOver />
+    const w: number = 800
+    const h: number = 500
+    const linearChart = <Chart linear={true} w={w} h={h} data={data} sold turnOver />
+    const barChart = <Chart linear={false} w={w} h={h} data={data} sold turnOver />
     const SWITCH_TIME_MILLIS = props.switchTimeMillis || 3000
 
     const dejta = { href: '/charts', title: lang.charts, tags: [lang.dynamicChanges, lang.timeToInvest] }

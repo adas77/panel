@@ -94,7 +94,7 @@ const useLang = () => {
         adviceWorld: choose(["Maybe it's time to start trading on the foreign market? Even if you lose, you will gain valuable experience!", "Może pora zacząć handlować na rynku zagranicznym? Nawet jeśli stracisz to zdobędziesz cenne doświadczenie!"]),
 
         mostOrdersFrom: choose(["Most orders from", "Wszystkie zamówienia z"]),
-        dynamicChanges: choose(["Dynamic changes in the market", "Dynamiczne zmiany na rynku"]),
+        dynamicChanges: choose(["Dynamic changes on the market", "Dynamiczne zmiany na rynku"]),
         timeToInvest: choose(["Time to invest", "Czas na inwestycje"]),
 
     }
