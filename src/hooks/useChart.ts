@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import { ChartData, ChartViewType } from '../types/ChartType'
-import useAccount from './useAccount'
 import { useSelector } from 'react-redux'
+import { ChartData, ChartViewType } from '../types/ChartType'
 import { formatDate } from '../utils/format'
+import useAccount from './useAccount'
 
 const useChart = () => {
     const { acc } = useAccount()
@@ -45,7 +45,6 @@ const useChart = () => {
         let sumTradingTurnover = 0
         let sumSold = 0
         update.forEach(d => {
-            // TODO: fix
             if (d.date.getDay() === currTime?.getDay()) {
                 sumTradingTurnover += d.tradingTurnover
                 sumSold += d.sold

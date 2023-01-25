@@ -21,18 +21,13 @@ const genOpinions = (howMany: number) => {
             rate: getRandomInt(0, 6),
             name: names[getRandomInt(0, names.length)],
             surname: surnames[getRandomInt(0, surnames.length)],
-            date: getRandomDate(new Date(1999, 0,0), new Date(2012, 0,0)),
+            date: getRandomDate(new Date(1999, 0, 0), new Date(2012, 0, 0)),
             description: 'Nam luctus nulla blandit sodales eleifend. Nullam facilisis augue eu felis ullamcorper iaculis in a turpis. Pellentesque hendrerit odio est, quis vulputate nisl convallis dapibus. Praesent semper, urna nec maximus sollicitudin, quam orci aliquet metus, nec placerat orci ex eu massa. Morbi rutrum ut urna a efficitur.'
         })
     }
 
     return opinions
 }
-
-// const opinions1 = genOpinions(36)
-// const opinions2 = genOpinions(36)
-// export default opinions1
-// export default opinions2
 
 export const opinions1 = genOpinions(36)
 export const opinions2 = genOpinions(72)

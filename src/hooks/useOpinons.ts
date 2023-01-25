@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react'
-import useAccount from './useAccount'
-import { OpinionFetchState } from '../types/OpinionType'
 import { useSelector } from 'react-redux'
-import { FetchState } from '../types/OpinionType'
+import { FetchState, OpinionFetchState } from '../types/OpinionType'
+import useAccount from './useAccount'
 
 const useOpinons = () => {
 

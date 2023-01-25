@@ -15,7 +15,6 @@ const OffertsTable = (props: Props) => {
 
     const { lang } = useLang()
     const { o, freq, setFreq } = useOfferts(props.showAll)
-
     const m = (img: string) => {
         return <div className="bg-0 bg-no-repeat bg-center">
             <Image size='small' src={img} />
@@ -34,8 +33,8 @@ const OffertsTable = (props: Props) => {
         <>
             <Flex>
                 <div>
-                    <Button variant={freq ? 'outline' : 'ghost'} onClick={() => setFreq(!freq)}>{lang.mostPopular}</Button>
-                    <Button variant={freq ? 'ghost' : 'outline'} onClick={() => setFreq(!freq)}>{lang.lessPopular}</Button>
+                    <Button variant={freq ? 'outline' : 'ghost'} onClick={() => setFreq(true)}>{lang.mostPopular}</Button>
+                    <Button variant={freq ? 'ghost' : 'outline'} onClick={() => setFreq(false)}>{lang.lessPopular}</Button>
                 </div>
             </Flex>
             <br />

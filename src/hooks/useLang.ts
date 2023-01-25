@@ -110,8 +110,12 @@ const useLang = () => {
         noAuctions: choose(["There are currently no auctions", "Obecnie brak aukcji"]),
 
         all: choose(["All", "Wszystko"]),
+        total: choose(["Total number of orders: ", "Łączna liczba zamówień: "]),
 
-
+        location: choose(["Location", "Lokalizacja"]),
+        prices: choose(["Prices", "Ceny"]),
+        delivery: choose(["Delivery", "Dostawa"]),
+        contact: choose(["Contact", "Kontakt"]),
     }
 
     return { lang }

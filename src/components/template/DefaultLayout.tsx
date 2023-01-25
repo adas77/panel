@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 import Navigation from '../molecules/Navigation'
 
 type Props = {
@@ -7,7 +7,6 @@ type Props = {
 
 const DefaultLayout = (props: Props) => {
     return (
-
         <section className="min-h-screen bg-gray-50 dark:bg-gray-900">
             <div className="align-content:center align-content: flex-start">
                 <Navigation />
@@ -17,7 +16,6 @@ const DefaultLayout = (props: Props) => {
                 <br />
                 {props.children}
                 <br />
-
             </div>
         </section>
     )

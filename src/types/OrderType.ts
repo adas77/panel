@@ -16,5 +16,3 @@ export type OrderTypeData = {
 }
 
 export type OrderStatus = 'UNPAID' | 'UNSENT' | 'RETURN'
-
-export type OrderReturnReason = 'BROKEN' | 'QUALITY' | 'USEFULNESS'

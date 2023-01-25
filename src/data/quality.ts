@@ -2,12 +2,11 @@ import { QualityType } from "../types/QualityType"
 import { getRandomInt } from '../utils/rand'
 
 
-const genRanks = () => {
+export const genRanks = (l: string, p: string, d: string, q: string, r: string, c: string) => {
     const ranks: QualityType[] = []
 
     // TODO: lang
-    const categories = ['Location', 'Prices', 'Delivery', 'Quality', 'Returns', 'Contact']
-
+    const categories = [l, p, d, q, r, c]
     for (let i = 0; i < categories.length; i++) {
         ranks.push({
             category: categories[i],
@@ -18,6 +17,3 @@ const genRanks = () => {
 
     return ranks
 }
-
-export const ranks1 = genRanks()
-export const ranks2 = genRanks()

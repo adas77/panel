@@ -10,8 +10,7 @@ const WidgetOrder = () => {
     const unpaid = acc.orders.unpaid.length
     const unsent = acc.orders.unsent.length
     const sum = ret + unpaid + unsent
-    // TODO count zamówienia
-    const tag1 = `Masz łącznie ${sum} zamówień`
+    const tag1 = `${lang.total}${sum}`
     const tag2 = lang.mostOrdersFrom + " USA"
     const tag3 = sum > 62 ? lang.notBad : lang.veryGood
 

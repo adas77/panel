@@ -1,13 +1,11 @@
-import DefaultLayout from '../template/DefaultLayout'
-import Flex from '../template/Flex'
+import WidgetAdvice from '../organisms/WidgetAdvice'
 import WidgetChart from '../organisms/WidgetChart'
+import WidgetOfferts from '../organisms/WidgetOfferts'
 import WidgetOpinions from '../organisms/WidgetOpinions'
 import WidgetOrder from '../organisms/WidgetOrder'
-import WidgetRankings from '../organisms/WidgetQuality'
-import WidgetOfferts from '../organisms/WidgetOfferts'
-import OffertsTable from '../organisms/OffertsTable'
 import WidgetQuality from '../organisms/WidgetQuality'
-import WidgetAdvice from '../organisms/WidgetAdvice'
+import DefaultLayout from '../template/DefaultLayout'
+import Flex from '../template/Flex'
 
 type Props = {}
 
@@ -17,12 +15,10 @@ const Widgets = (props: Props) => {
             <Flex gap='small'>
                 <WidgetOpinions />
                 <WidgetChart />
-                <WidgetOfferts/>
+                <WidgetOfferts />
                 <WidgetQuality showWorst />
                 <WidgetAdvice />
                 <WidgetOrder />
-
-                {/* <OffertsTable /> */}
             </Flex>
         </DefaultLayout>
     )

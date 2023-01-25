@@ -14,9 +14,3 @@ export type AccountType = {
     ranks: QualityType[],
     offerts: any[],
 }
-
-// import { order1, order2 } from "../data/order"
-// import { chartData1, chartData2 } from "../data/chartDates"
-// import { opinions1, opinions2 } from "../data/opinions"
-// import { ranks1, ranks2 } from "../data/rank"
-// import   {genOfferts,} from "../data/offerts"

@@ -1,8 +1,8 @@
 import { ReactNode, useEffect } from 'react'
 import useChart from '../../hooks/useChart'
+import useLang from '../../hooks/useLang'
 import Chart from '../atoms/Chart'
 import Widget from '../molecules/Widget'
-import useLang from '../../hooks/useLang'
 
 type Props = {
     childComponent?: ReactNode

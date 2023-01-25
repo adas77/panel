@@ -14,7 +14,6 @@ const Orders = (props: Props) => {
     const { lang } = useLang()
     const navigate = useNavigate();
 
-
     return (
         <DefaultLayout>
             <Flex>

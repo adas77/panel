@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react'
-import { genOfferts } from '../data/offerts'
-import useLang from './useLang'
-import useAccount from './useAccount'
 import { useSelector } from 'react-redux'
+import useAccount from './useAccount'
 
 const useOfferts = (all?: boolean) => {
     const [acc1] = useSelector((s: GlobalState) => {

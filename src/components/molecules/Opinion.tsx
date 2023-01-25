@@ -2,12 +2,9 @@ import clsx from "clsx"
 import { OpinionType } from '../../types/OpinionType'
 import Image from '../atoms/Image'
 
-import Rate from './Rate'
-import { formatDate } from "../../utils/format"
-import useLang from "../../hooks/useLang"
-import useGlobalDispatch from "../../redux/actionCreators"
 import { useSelector } from "react-redux"
-import console from "console"
+import { formatDate } from "../../utils/format"
+import Rate from './Rate'
 
 const Opinion = (props: OpinionType) => {
     const [isPolish] = useSelector((s: GlobalState) => {

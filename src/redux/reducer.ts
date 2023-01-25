@@ -1,5 +1,5 @@
-import * as ActionType from '../types/StoreActionType'
 import user1 from '../data/auth'
+import * as ActionType from '../types/StoreActionType'
 
 const initialState: GlobalState = {
   isAuth: false,

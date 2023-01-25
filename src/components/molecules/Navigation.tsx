@@ -4,13 +4,11 @@ import { Link } from 'react-router-dom';
 import useLang from '../../hooks/useLang';
 import useGlobalDispatch from '../../redux/actionCreators';
 import Button from '../atoms/Button';
+import Image from '../atoms/Image';
+import def from '../atoms/img/default.jpg';
+import dog from '../atoms/img/dog.jpg';
 import LangSwitcher from './LangSwitcher';
 import ThemeSwitcher from './ThemeSwitcher';
-import useAccount from '../../hooks/useAccount';
-import Dropdown from '../atoms/Dropdown';
-import Image from '../atoms/Image';
-import dog from '../atoms/img/dog.jpg';
-import def from '../atoms/img/default.jpg';
 
 type Props = {
     href: string,
@@ -33,19 +31,7 @@ const Navigation = () => {
         return [s.isAuth, s.acc1]
     })
     const { cmdLogout, cmdSwitchAccount } = useGlobalDispatch()
-
     const items = [{ href: '/widgets', name: lang.widgets }, { href: '/orders', name: lang.orders }, { href: '/quality', name: lang.quality }, { href: '/opinions', name: lang.opinions }, { href: '/rankings', name: lang.rankings }, { href: '/charts', name: lang.charts }]
-    const u1 = {
-        name: "u1", handleClick: () => {
-            cmdSwitchAccount()
-        }
-    }
-    const u2 = {
-        name: "u2", handleClick: () => {
-            cmdSwitchAccount()
-        }
-    }
-
 
     return (
         <>

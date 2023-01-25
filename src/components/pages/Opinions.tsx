@@ -1,13 +1,11 @@
 import useLang from '../../hooks/useLang'
 import useOpinons from '../../hooks/useOpinons'
-import DefaultLayout from '../template/DefaultLayout'
-import Flex from '../template/Flex'
 import Button from '../atoms/Button'
 import Dropdown from '../atoms/Dropdown'
 import Opinion from '../molecules/Opinion'
 import Search from '../molecules/Search'
-import { OpinionFetchState } from '../../types/OpinionType'
-import { useEffect, useState } from 'react'
+import DefaultLayout from '../template/DefaultLayout'
+import Flex from '../template/Flex'
 
 const Opinions = () => {
     const { opinionFetchState, opinionState, setOpinionState, setSearch, search } = useOpinons()

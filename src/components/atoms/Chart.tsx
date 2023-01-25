@@ -21,10 +21,10 @@ type Props = {
 }
 
 const Chart = (props: Props) => {
-    const top: number = 50
-    const right: number = 30
+    const top: number = 30
+    const right: number = 20
     const left: number = 20
-    const bottom: number = 5
+    const bottom: number = 10
     return (
         <>
             {props.linear ?

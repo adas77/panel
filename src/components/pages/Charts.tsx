@@ -9,7 +9,7 @@ import Flex from '../template/Flex'
 
 
 const Charts = () => {
-    const { data, switchChartType, linear, changeWeek, changeDay, setLinear, chartView, sold, setSold, turnOver, setTurnOver } = useChart()
+    const { data, linear, changeWeek, changeDay, setLinear, chartView, sold, setSold, turnOver, setTurnOver } = useChart()
     const { lang } = useLang()
     const width: number = 1600
     const height: number = 800
@@ -38,7 +38,6 @@ const Charts = () => {
 
                 {linear ? <Chart linear w={width} h={height} data={data} sold={sold} turnOver={turnOver} /> : <Chart w={width} h={height} data={data} sold={sold} turnOver={turnOver} />}
             </Flex>
-
         </DefaultLayout>
     )
 }

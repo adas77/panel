@@ -1,6 +1,6 @@
 
 import { useDispatch } from "react-redux";
-import * as ActionType from '../types/StoreActionType'
+import * as ActionType from '../types/StoreActionType';
 
 
 const useGlobalDispatch = () => {

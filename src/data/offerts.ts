@@ -1,12 +1,10 @@
 import { OffertsType } from "../types/OffertsType"
 import { getRandomInt } from '../utils/rand'
-
-import useLang from "../hooks/useLang"
 import computer from '../components/atoms/img/computer.jpg'
-import phone from '../components/atoms/img/phone.png'
 import headphones from '../components/atoms/img/headphones.jpg'
-import tv from '../components/atoms/img/tv.jpg'
 import keyboard from '../components/atoms/img/keyboard.jpg'
+import phone from '../components/atoms/img/phone.png'
+import tv from '../components/atoms/img/tv.jpg'
 
 export function genOfferts(howMany: number, c: string, p: string, h: string, t: string, k: string) {
 

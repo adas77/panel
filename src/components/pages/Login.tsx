@@ -22,7 +22,6 @@ const Login = () => {
     const handleForm = (event: React.SyntheticEvent) => {
         event.preventDefault()
         cmdLogin(username, pass)
-
     }
 
     const handlePassword = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -78,7 +77,6 @@ const Login = () => {
                 </div>
             </section>
         </>
-
     )
 }
 

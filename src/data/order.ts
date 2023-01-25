@@ -47,8 +47,5 @@ function genOrderData(howMany: number, skip: boolean) {
     return { unpaid, unsent, returns }
 }
 
-// export const { unpaid, unsent, returns } = genOrderData(60)
 export const order1 = genOrderData(60, true)
 export const order2 = genOrderData(120, false)
-
-// export const u2.unpaid  
