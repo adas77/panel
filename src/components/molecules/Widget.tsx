@@ -11,7 +11,7 @@ type Props = {
 
 const Widget = (props: Props) => {
     return (
-        <div className="rounded overflow-hidden shadow-lg bg-gray-100 dark:bg-gray-600">
+        <div className="rounded-lg overflow-hidden shadow-lg bg-gray-100 dark:bg-gray-700">
             <div className="px-6 py-4">
                 <div className="font-bold text-xl mb-2 dark:text-white">
                     <a href={props.href}>
@@ -28,7 +28,7 @@ const Widget = (props: Props) => {
             )}
             >
                 {props.tags.map((t) =>
-                    <span key={t} className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 dark:bg-gray-800 dark:text-white">#{t}</span>
+                    <span key={t} className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 dark:bg-gray-800 dark:text-white"># {t}</span>
                 )}
 
 

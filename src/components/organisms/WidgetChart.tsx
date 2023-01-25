@@ -13,7 +13,7 @@ const WidgetChart = (props: Props) => {
     const { data, linear, switchChartType } = useChart()
     const { lang } = useLang()
     const w: number = 800
-    const h: number = 500
+    const h: number = 460
     const linearChart = <Chart linear={true} w={w} h={h} data={data} sold turnOver />
     const barChart = <Chart linear={false} w={w} h={h} data={data} sold turnOver />
     const SWITCH_TIME_MILLIS = props.switchTimeMillis || 3000

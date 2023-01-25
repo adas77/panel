@@ -97,6 +97,10 @@ const useLang = () => {
         dynamicChanges: choose(["Dynamic changes on the market", "Dynamiczne zmiany na rynku"]),
         timeToInvest: choose(["Time to invest", "Czas na inwestycje"]),
 
+        unhappy: choose(["Dissatisfied customers", "Niezadowolenie klientów"]),
+        satisfiedCustomers: choose(["Satisfied customers", "Klienci usatysfakcjonowani"]),
+
+
     }
 
     return { lang }

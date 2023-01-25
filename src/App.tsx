@@ -57,11 +57,6 @@ function App() {
             errorElement: <Error />
           },
           {
-            path: "/advice",
-            element: <WidgetAdvice />,
-            errorElement: <Error />
-          },
-          {
             path: "/",
             element: <Widgets />,
             errorElement: <Error />
