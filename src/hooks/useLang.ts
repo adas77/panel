@@ -82,6 +82,21 @@ const useLang = () => {
         mostPopular: choose(["Most Popular", "Najbardziej popularne"]),
         lessPopular: choose(["Less Popular", "Najmniej popularne"]),
 
+        adviceAdvertTitle: choose(["Time for advertising", "Czas na reklamę"]),
+        adviceBuyTitle: choose(["More goods", "Większa ilość towaru"]),
+        adviceCurrTitle: choose(["Various currencies", "Różne waluty"]),
+        adviceWorldTitle: choose(["Go out into the world", "Wyrusz w świat"]),
+
+
+        adviceAdvert: choose(["To increase your customer base, you need wider publicity. Have you thought about starting a YouTube channel?", "Aby zwiększyć grono klientów potrzebujesz szerszego rozgłosu. Myślałeś nad założeniem kanału na Youtube?"]),
+        adviceBuy: choose(["To get to a higher level, you need to trade more goods. Don't be afraid to take a chance!!", "Żeby wejść na wyższy poziom potrzebujesz obracać większą  ilością towaru. Nie bój się zaryzykować!!"]),
+        adviceCurr: choose(["Maybe it's worth taking a risk and starting trading in new currencies? The Russian ruble is definitely a good idea!", "Może warto zaryzykować i zacząć handlować w nowych walutach? Rubel rosyjski to na pewno dobry pomysł!"]),
+        adviceWorld: choose(["Maybe it's time to start trading on the foreign market? Even if you lose, you will gain valuable experience!", "Może pora zacząć handlować na rynku zagranicznym? Nawet jeśli stracisz to zdobędziesz cenne doświadczenie!"]),
+
+        mostOrdersFrom: choose(["Most orders from", "Wszystkie zamówienia z"]),
+        dynamicChanges: choose(["Dynamic changes in the market", "Dynamiczne zmiany na rynku"]),
+        timeToInvest: choose(["Time to invest", "Czas na inwestycje"]),
+
     }
 
     return { lang }

@@ -16,7 +16,7 @@ const WidgetChart = (props: Props) => {
     const barChart = <Chart linear={false} w={800} h={400} data={data} sold turnOver />
     const SWITCH_TIME_MILLIS = props.switchTimeMillis || 3000
 
-    const dejta = { href: '/charts', title: lang.charts, tags: ['Wzrosty', 'Spadki'] }
+    const dejta = { href: '/charts', title: lang.charts, tags: [lang.dynamicChanges, lang.timeToInvest] }
 
     useEffect(() => {
         const timer = setTimeout(() => {

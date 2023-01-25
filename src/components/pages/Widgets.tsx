@@ -7,6 +7,7 @@ import WidgetRankings from '../organisms/WidgetQuality'
 import WidgetOfferts from '../organisms/WidgetOfferts'
 import OffertsTable from '../organisms/OffertsTable'
 import WidgetQuality from '../organisms/WidgetQuality'
+import WidgetAdvice from '../organisms/WidgetAdvice'
 
 type Props = {}
 
@@ -18,6 +19,7 @@ const Widgets = (props: Props) => {
                 <WidgetChart />
                 <WidgetOfferts/>
                 <WidgetQuality showWorst />
+                <WidgetAdvice />
                 <WidgetOrder />
 
                 {/* <OffertsTable /> */}
