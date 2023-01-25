@@ -100,6 +100,17 @@ const useLang = () => {
         unhappy: choose(["Dissatisfied customers", "Niezadowolenie klientów"]),
         satisfiedCustomers: choose(["Satisfied customers", "Klienci usatysfakcjonowani"]),
 
+        orderNumber: choose(["Order Number", "Numer zamówienia"]),
+        buyer: choose(["Customer", "Klient"]),
+        dateBought: choose(["Buy Date", "Data kupna"]),
+        datePaid: choose(["Pay Date", "Data Zapłaty"]),
+        dateSent: choose(["Sent Date", "Data Wysłania"]),
+
+        startTrading: choose(["Start to trade!", "Zacznij handlować"]),
+        noAuctions: choose(["There are currently no auctions", "Obecnie brak aukcji"]),
+
+        all: choose(["All", "Wszystko"]),
+
 
     }
 

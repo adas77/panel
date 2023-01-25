@@ -32,7 +32,6 @@ const Opinion = (props: OpinionType) => {
                     <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{props.description}</h5>
                 </a>}
                 <Rate rate={props.rate} />
-                {/* <span className="text font-bold text-gray-900 dark:text-white">{props.date.toUTCString()}</span> */}
                 <span className="text font-bold text-gray-900 dark:text-white">{formatDate(props.date, isPolish)}</span>
             </div>
         </div>

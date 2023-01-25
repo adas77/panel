@@ -33,14 +33,12 @@ function App() {
           },
           {
             path: "/orders",
-            // element: <Orders type={'UNPAID'} />,
+            element: <Orders type={'UNPAID'} />,
             errorElement: <Error />,
-            children: [
-              { path: "/orders/unpaid", element: <Orders type={'UNPAID'} /> },
-              { path: "/orders/unsent", element: <Orders type={'UNSENT'} /> },
-              { path: "/orders/returns", element: <Orders type={'RETURN'} /> },
-            ]
           },
+          { path: "/orders/unpaid", element: <Orders type={'UNPAID'} />, errorElement: <Error />, },
+          { path: "/orders/unsent", element: <Orders type={'UNSENT'} />, errorElement: <Error />, },
+          { path: "/orders/returns", element: <Orders type={'RETURN'} />, errorElement: <Error />, },
           {
             path: "/rankings",
             element: <Rankings />,

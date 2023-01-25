@@ -12,7 +12,7 @@ export type AccountType = {
     charts: ChartData[],
     opinions: OpinionType[],
     ranks: QualityType[],
-    offerts?: any[],
+    offerts: any[],
 }
 
 // import { order1, order2 } from "../data/order"

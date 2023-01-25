@@ -1,46 +1,32 @@
 import { useEffect, useState } from 'react'
 import { genOfferts } from '../data/offerts'
 import useLang from './useLang'
+import useAccount from './useAccount'
+import { useSelector } from 'react-redux'
 
 const useOfferts = (all?: boolean) => {
-    const { lang } = useLang()
+    const [acc1] = useSelector((s: GlobalState) => {
+        return [s.acc1]
+    })
+    const { acc } = useAccount()
     const ALL = 35
     const howMany: number = all ? ALL : 5
-    const offerts = genOfferts(howMany, lang.computer, lang.phone, lang.headphones, lang.tv, lang.keyboard)
+
     const [freq, setFreq] = useState(true)
-    const [o, setO] = useState(offerts)
+    const [o, setO] = useState(acc.offerts)
 
 
     useEffect(() => {
-        freq ? showFreq() : showLessFreq()
+        freq ?
+            setO(acc.offerts.sort((a, b) => { return b.turnover - a.turnover }).slice(0, howMany))
+            :
+            setO(acc.offerts.sort((a, b) => { return b.views - a.views }).slice(0, howMany))
 
         return () => {
         }
-    }, [freq])
+    }, [freq, acc1])
 
-
-
-    const showFreq = (show?: number) => {
-        const offertsFreq = offerts.sort((a, b) => { return b.turnover - a.turnover })
-        const f = offertsFreq.slice(0, show || howMany)
-        setO(f)
-    }
-
-    const showLessFreq = (show?: number) => {
-        const offertsLessFreq = offerts.sort((a, b) => { return b.views - a.views })
-        const l = offertsLessFreq.slice(0, show || howMany)
-        setO(l)
-    }
-
-
-    // const offertsFreq = offerts.sort((a, b) => { return b.turnover - a.turnover })
-    // const f = offertsFreq.slice(0, SHOW)
-
-    // const offertsLessFreq = offerts.sort((a, b) => { return b.views - a.views })
-    // const l = offertsLessFreq.slice(0, SHOW)
-
-
-    return { freq, showFreq, showLessFreq, o, setFreq }
+    return { freq, o, setFreq, setO }
 }
 
 export default useOfferts

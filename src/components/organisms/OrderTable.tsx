@@ -32,23 +32,18 @@ const OrderTable = (props: Props) => {
     const makeRow = (o: OrderTypeData) => {
         return {
             items: [o.orderNumber.toString(), o.buyer, o.quantity, formatDate(o.dateBought, isPolish),
-            (props.type === 'UNPAID' || props.type === 'RETURN') && formatDate(o.datePaid || new Date(), isPolish),
-            props.type === 'RETURN' && formatDate(o.dateSent || new Date(), isPolish)]
+            (props.type === 'UNSENT' || props.type === 'RETURN') && formatDate(o.datePaid || new Date(), isPolish),
+            props.type === 'RETURN' && formatDate(o.dateSent || new Date(), isPolish),
+            props.type === 'RETURN' && (o.returned || "").toString(),
+            ]
         }
     }
 
-    // if (orders) {
-    //     const rows: RowData[] = orders.map((o) => makeRow(o))
-    //     const cols = ["orderNumber", "buyer", "quantity", "dateBought", "datePaid", "dateSent", "returned"]
-
-    // }
-
-
     return (
-        (orders && orders.length > 0) ? <Table cols={["orderNumber", "buyer", "quantity", "dateBought", "datePaid", "dateSent", "returned"]} rows={orders.map((o) => makeRow(o))} />
+        (orders && orders.length > 0) ? <Table cols={[lang.orderNumber, lang.buyer, lang.quality, lang.dateBought, lang.datePaid, lang.dateSent, lang.returns]} rows={orders.map((o) => makeRow(o))} />
             :
             <>
-                <Alert msg={'Zacznij handlować!!! '} w={'neutral'} name={'Brak obecnie Aukcji'} comment={'Niedobrze...'} />
+                <Alert msg={lang.startTrading} w={'neutral'} name={lang.noAuctions} comment={lang.bad} />
             </>
     )
 }

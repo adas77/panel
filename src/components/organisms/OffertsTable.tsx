@@ -1,5 +1,3 @@
-import { useState } from 'react'
-import { genOfferts } from '../../data/offerts'
 import useLang from '../../hooks/useLang'
 import useOfferts from '../../hooks/useOfferts'
 import { OffertsType } from '../../types/OffertsType'

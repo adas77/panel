@@ -11,57 +11,60 @@ import { useEffect, useState } from 'react'
 
 const Opinions = () => {
     const howManyShow: number = OpinionFetchState.ALL
-    const { getPositiveOpinions, getNegativeOpinions, opinionFetchState, getOpinions, getByNameOpinions } = useOpinons()
+    const { opinionFetchState, getOpinions, opinionState, setOpinionState, setSearch, search } = useOpinons()
     const { lang } = useLang()
-    const [search, setSearch] = useState<string>("")
+    // const [search, setSearch] = useState<string>("")
+    // const [isNewest, setIsNewest] = useState(false)
+    // const [isPositive, setIsPositive] = useState(false)
 
-    useEffect(() => {
-        console.log(search)
-        getByNameOpinions(search)
+    // useEffect(() => {
+    //     setSearch
 
-        return () => {
+    //     return () => {
 
-        }
-    }, [search])
+    //     }
+    // }, [search])
 
 
     const positive = {
         name: lang.positive, handleClick: () => {
-            getPositiveOpinions()
+            setOpinionState("POSITIVE")
         }
     }
     const negative = {
         name: lang.negative, handleClick: () => {
-            getNegativeOpinions()
+            setOpinionState("NEGATIVE")
+
         }
     }
     const newest = {
         name: lang.newest, handleClick: () => {
-            getOpinions(false, howManyShow)
+            setOpinionState("NEWEST")
+
         }
     }
     const oldest = {
         name: lang.oldest, handleClick: () => {
-            getOpinions(true, howManyShow + 1)
+            setOpinionState("OLDEST")
+
         }
     }
     return (
         <DefaultLayout>
+            <br />
             <Flex gap='small'>
-                <Search onChange={(e) => setSearch(e.currentTarget.value)} value={search} searchPlaceholder={lang.searchBySurname} />
-                <Dropdown items={[
+                <Search onChange={(e) => {
+                    e.currentTarget.value.length > 0 ? setOpinionState("SEARCH") : setOpinionState("ALL")
+                    setSearch(e.currentTarget.value)
+                }} value={search} searchPlaceholder={lang.searchBySurname} />
+                <Dropdown variant={(opinionState === "POSITIVE" || opinionState === "NEGATIVE") ? 'dropdown' : 'dropdownGhost'} items={[
                     positive, negative
                 ]} title={lang.contentment} />
-                <Dropdown items={[
+                <Dropdown variant={(opinionState === "NEWEST" || opinionState === "OLDEST") ? 'dropdown' : 'dropdownGhost'} items={[
                     newest, oldest
                 ]} title={lang.sortByTime} />
+                <Button variant={opinionState === "ALL" ? 'outline' : 'ghost'} onClick={() => setOpinionState("ALL")}>{lang.all}</Button>
             </Flex>
-
-
-
-
-            <br />
-            <br />
             <Flex gap='small'>
                 {opinionFetchState.map((o) => <Opinion key={o.id} src={o.src} alt={o.alt} rate={o.rate} name={o.name} surname={o.surname} date={o.date} description={o.description} id={0} />)}
             </Flex>
