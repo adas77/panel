@@ -23,9 +23,7 @@ const useAccount = () => {
         opinions: acc1 ? opinions1 : opinions2,
         ranks: acc1 ? ranks1 : ranks2,
         offerts: acc1 ? genOfferts(35, lang.computer, lang.phone, lang.headphones, lang.tv, lang.keyboard) : genOfferts(35 * 2, lang.computer, lang.phone, lang.headphones, lang.tv, lang.keyboard)
-
     }
-
 
     return { acc }
 }

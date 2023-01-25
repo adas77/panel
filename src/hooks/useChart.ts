@@ -28,12 +28,10 @@ const useChart = () => {
     }
 
     const changeDay = () => {
-        const format = (d: Date) => ("0" + d.getDate()).slice(-2) + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" +
-            d.getFullYear() + " " + ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2)
 
         const updateDay = acc.charts
             .filter((d) => d.date.getTime() >= (Date.now() - DAY_IN_MILLIS))
-            .map((d) => { return { ...d, name: formatDate(d.date, isPolish) } })
+            .map((d) => { return { ...d, name: formatDate(d.date, isPolish, true) } })
 
         updateDay.reverse()
         setData(updateDay)
