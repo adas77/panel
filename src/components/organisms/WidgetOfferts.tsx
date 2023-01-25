@@ -4,7 +4,7 @@ import OffertsTable from './OffertsTable';
 
 const WidgetOfferts = () => {
     const { lang } = useLang()
-   
+
     return (
         <Widget childComponent={<OffertsTable />} href={'/rankings'} tags={[]} title={lang.rankings} />
     )

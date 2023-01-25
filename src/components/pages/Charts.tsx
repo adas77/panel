@@ -1,13 +1,11 @@
 import useChart from '../../hooks/useChart'
 import useLang from '../../hooks/useLang'
-import DefaultLayout from '../template/DefaultLayout'
+import { ChartViewType } from '../../types/ChartType'
 import Button from '../atoms/Button'
 import Chart from '../atoms/Chart'
-import Checkbox from '../atoms/Ckeckbox'
-import Dropdown from '../atoms/Dropdown'
-import { ChartViewType } from '../../types/ChartType'
-import Flex from '../template/Flex'
 import Ckeckbox from '../atoms/Ckeckbox'
+import DefaultLayout from '../template/DefaultLayout'
+import Flex from '../template/Flex'
 
 
 const Charts = () => {

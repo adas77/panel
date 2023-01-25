@@ -1,11 +1,11 @@
-import WidgetRankings from '../organisms/WidgetQuality'
+import OffertsTable from '../organisms/OffertsTable'
 import DefaultLayout from '../template/DefaultLayout'
 type Props = {}
 
 const Rankings = (props: Props) => {
     return (
         <DefaultLayout>
-            <WidgetRankings />
+            <OffertsTable showAll/>
         </DefaultLayout>
     )
 }

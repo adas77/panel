@@ -79,6 +79,8 @@ const useLang = () => {
         excellent: choose(["Ecellent", "Spaniale"]),
 
         worstRanks: choose(["Your worst statistics / weight:", "Twoje najgorsze statystyki / waga:"]),
+        mostPopular: choose(["Most Popular", "Najbardziej popularne"]),
+        lessPopular: choose(["Less Popular", "Najmniej popularne"]),
 
     }
 

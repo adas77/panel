@@ -1,46 +1,46 @@
 import { useState } from 'react'
 import { genOfferts } from '../../data/offerts'
 import useLang from '../../hooks/useLang'
+import useOfferts from '../../hooks/useOfferts'
 import { OffertsType } from '../../types/OffertsType'
 import { RowData } from '../../types/TableType'
 import Button from '../atoms/Button'
+import Image from '../atoms/Image'
 import Table from '../molecules/Table'
+import Flex from '../template/Flex'
 
-type Props = {}
+type Props = {
+    showAll?: boolean
+}
 
 const OffertsTable = (props: Props) => {
-    const SHOW = 5
 
     const { lang } = useLang()
-    const offerts = genOfferts(35, lang.computer, lang.phone, lang.headphones, lang.tv, lang.keyboard)
-
-    const offertsFreq = offerts.sort((a, b) => { return b.turnover - a.turnover })
-    const f = offertsFreq.slice(0, SHOW)
-
-    const offertsLessFreq = offerts.sort((a, b) => { return b.views - a.views })
-    const l = offertsLessFreq.slice(0, SHOW)
-
-    const [freq, setFreq] = useState(true)
-
-    
+    const { o, freq, setFreq } = useOfferts(props.showAll)
 
     const m = (img: string) => {
-        return <div className="bg-0 bg-no-repeat bg-center"> <img className="bg-0 h-auto max-w-lg mx-auto bg-transparent w-12" src={img} alt="image description">
-        </img></div>
+        return <div className="bg-0 bg-no-repeat bg-center">
+            <Image size='small' src={img} />
+        </div>
     }
     const makeRow = (o: OffertsType) => {
-        // return { items: [o.name, <Image src={o.img} />, o.sold, freq ? o.turnover : o.views] }
         return {
             items: [o.name, m(o.img)
                 , o.sold, freq ? o.turnover : o.views]
         }
     }
-    const rows: RowData[] = freq ? f.map((o: any) => makeRow(o)) : l.map((o: any) => makeRow(o))
+    const rows: RowData[] = o.map((o: any) => makeRow(o))
     const cols = [lang.name, lang.photo, lang.sold, freq ? lang.turnOver : lang.views]
 
     return (
         <>
-            <Button variant='outline' onClick={e => setFreq(!freq)}>change</Button>
+            <Flex>
+                <div>
+                    <Button variant={freq ? 'outline' : 'ghost'} onClick={() => setFreq(!freq)}>{lang.mostPopular}</Button>
+                    <Button variant={freq ? 'ghost' : 'outline'} onClick={() => setFreq(!freq)}>{lang.lessPopular}</Button>
+                </div>
+            </Flex>
+            <br />
             <Table cols={cols} rows={rows} />
         </>
 
