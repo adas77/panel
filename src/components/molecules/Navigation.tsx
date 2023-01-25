@@ -24,7 +24,6 @@ const NavigationItem = (props: Props) => {
 }
 
 const Navigation = () => {
-    const { acc } = useAccount()
     const { lang } = useLang()
     const [isAuth] = useSelector((s: GlobalState) => {
         return [s.isAuth]

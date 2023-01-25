@@ -9,6 +9,8 @@ const useChart = () => {
 
     const [data, setData] = useState<ChartData[]>([])
     const [chartView, setChartView] = useState<ChartViewType>(ChartViewType.DAY)
+    const [sold, setSold] = useState(true)
+    const [turnOver, setTurnOver] = useState(true)
     const [showSecondChart, setShowSecondChart] = useState(false)
     const [linear, setLinear] = useState(true)
     const [rerenderInTime, setRerenderInTime] = useState<number>(-1)
@@ -81,7 +83,7 @@ const useChart = () => {
         setChartView(ChartViewType.WEEK)
     }
 
-    return { data, chartView, changeDay, changeWeek, switchShowSecondChart, switchChartType, switchInTime, linear, showSecondChart }
+    return { data, chartView, changeDay, changeWeek, switchShowSecondChart, switchChartType, switchInTime, linear, showSecondChart, setLinear, sold, setSold, turnOver, setTurnOver }
 }
 
 export default useChart

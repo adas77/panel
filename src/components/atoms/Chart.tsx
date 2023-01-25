@@ -10,10 +10,11 @@ import {
     YAxis
 } from "recharts";
 import { ChartData } from "../../types/ChartType";
-import { useSelector } from "react-redux";
 
 type Props = {
     linear?: boolean,
+    turnOver?: boolean,
+    sold?: boolean,
     data: ChartData[],
     w: number,
     h: number,
@@ -43,12 +44,18 @@ const Chart = (props: Props) => {
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Line
+                    {props.sold && <Line
                         type="monotone"
                         dataKey="sold"
                         stroke="#8884d8"
                         activeDot={{ r: 8 }}
-                    />
+                    />}
+                    {props.turnOver && <Line
+                        type="monotone"
+                        dataKey="tradingTurnover"
+                        stroke="#82ca9d"
+                        activeDot={{ r: 8 }}
+                    />}
 
                 </LineChart>
                 :
@@ -68,8 +75,8 @@ const Chart = (props: Props) => {
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey="sold" fill="#8884d8" />
-                    <Bar dataKey="tradingTurnover" fill="#82ca9d" />
+                    {props.sold && <Bar dataKey="sold" fill="#8884d8" />}
+                    {props.turnOver && <Bar dataKey="tradingTurnover" fill="#82ca9d" />}
                 </BarChart>
             }
         </>
