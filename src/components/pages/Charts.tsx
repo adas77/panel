@@ -13,6 +13,8 @@ import Ckeckbox from '../atoms/Ckeckbox'
 const Charts = () => {
     const { data, switchChartType, linear, changeWeek, changeDay, setLinear, chartView, sold, setSold, turnOver, setTurnOver } = useChart()
     const { lang } = useLang()
+    const width: number = 1600
+    const height: number = 800
     return (
         <DefaultLayout>
             <Flex gap='small'>
@@ -34,8 +36,11 @@ const Charts = () => {
                     <Ckeckbox onClick={() => setSold(!sold)} checked={sold} label={lang.sold} />
                 </div>
             </Flex>
+            <Flex>
 
-            {linear ? <Chart linear w={1200} h={600} data={data} sold={sold} turnOver={turnOver} /> : <Chart w={1200} h={600} data={data} sold={sold} turnOver={turnOver} />}
+                {linear ? <Chart linear w={width} h={height} data={data} sold={sold} turnOver={turnOver} /> : <Chart w={width} h={height} data={data} sold={sold} turnOver={turnOver} />}
+            </Flex>
+
         </DefaultLayout>
     )
 }

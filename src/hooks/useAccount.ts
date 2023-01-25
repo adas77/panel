@@ -2,7 +2,7 @@ import { useSelector } from "react-redux"
 import { order1, order2 } from "../data/order"
 import { chartData1, chartData2 } from "../data/chartDates"
 import { opinions1, opinions2 } from "../data/opinions"
-import { ranks1, ranks2 } from "../data/rank"
+import { ranks1, ranks2 } from "../data/quality"
 import { AccountType } from "../types/accountType"
 // import   {genOfferts,} from "../data/offerts"
 

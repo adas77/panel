@@ -7,9 +7,11 @@ import Charts from './components/pages/Charts';
 import Error from './components/pages/Error';
 import Login from './components/pages/Login';
 import Opinions from './components/pages/Opinions';
+import Qualities from './components/pages/Qualities';
 import PrivateRoute from './components/pages/PrivateRoute';
 import Widgets from './components/pages/Widgets';
 import { persistor, store } from './redux/store';
+import Rankings from './components/pages/Rankings';
 
 function App() {
   const router = createBrowserRouter([
@@ -41,12 +43,17 @@ function App() {
           },
           {
             path: "/rankings",
-            element: <OffertsTable />,
+            element: <Rankings />,
             errorElement: <Error />
           },
           {
             path: "/widgets",
             element: <Widgets />,
+            errorElement: <Error />
+          },
+          {
+            path: "/quality",
+            element: <Qualities />,
             errorElement: <Error />
           },
           {

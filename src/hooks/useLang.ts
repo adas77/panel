@@ -71,6 +71,15 @@ const useLang = () => {
         search: choose(["Search", "Szukaj"]),
         searchBySurname: choose(["Search by surname", "Szukaj po nazwisku"]),
 
+        veryBad: choose(["Very Bad", "SzukajBardzo źle"]),
+        bad: choose(["Bad", "Źle"]),
+        notBad: choose(["Not bad", "Nieźle"]),
+        quiteGood: choose(["Quite Good", "Całkiem dobrze"]),
+        veryGood: choose(["Very good", "Bardzo dobrze"]),
+        excellent: choose(["Ecellent", "Spaniale"]),
+
+        worstRanks: choose(["Your worst statistics / weight:", "Twoje najgorsze statystyki / waga:"]),
+
     }
 
     return { lang }

@@ -1,6 +1,5 @@
-import React from 'react'
+import WidgetRankings from '../organisms/WidgetQuality'
 import DefaultLayout from '../template/DefaultLayout'
-import WidgetRankings from '../organisms/WidgetRankings'
 type Props = {}
 
 const Rankings = (props: Props) => {

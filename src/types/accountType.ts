@@ -1,7 +1,7 @@
 import { ChartData } from "./ChartType";
 import { OpinionType } from "./OpinionType";
 import { OrderTypeData } from "./OrderType";
-import { RankingType } from "./RankingType";
+import { QualityType } from "./QualityType";
 
 export type AccountType = {
     orders: {
@@ -11,7 +11,7 @@ export type AccountType = {
     },
     charts: ChartData[],
     opinions: OpinionType[],
-    ranks: RankingType[],
+    ranks: QualityType[],
     offerts?: any[],
 }
 
