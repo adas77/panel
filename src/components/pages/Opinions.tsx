@@ -10,21 +10,8 @@ import { OpinionFetchState } from '../../types/OpinionType'
 import { useEffect, useState } from 'react'
 
 const Opinions = () => {
-    const howManyShow: number = OpinionFetchState.ALL
-    const { opinionFetchState, getOpinions, opinionState, setOpinionState, setSearch, search } = useOpinons()
+    const { opinionFetchState, opinionState, setOpinionState, setSearch, search } = useOpinons()
     const { lang } = useLang()
-    // const [search, setSearch] = useState<string>("")
-    // const [isNewest, setIsNewest] = useState(false)
-    // const [isPositive, setIsPositive] = useState(false)
-
-    // useEffect(() => {
-    //     setSearch
-
-    //     return () => {
-
-    //     }
-    // }, [search])
-
 
     const positive = {
         name: lang.positive, handleClick: () => {
