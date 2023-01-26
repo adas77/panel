@@ -1,3 +1,6 @@
+# Link do CodeSandbox
+Link: [https://codesandbox.io/p/github/adas77/panel/main](https://codesandbox.io/p/github/adas77/panel/main)
+Dokumentacja w `/doc`
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
