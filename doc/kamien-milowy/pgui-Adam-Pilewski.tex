@@ -34,36 +34,48 @@
 \maketitle
 
 \section{Analiza i wymagania}
-\subsection{MoSCoW}
+\subsection{(78h) MoSCoW}
 
 
 \begin{enumerate}
-    \item MUST
+    \item (47h) MUST
     \begin{enumerate}
         \item 1h Logowanie
-        \item 3h Wielokontowość
-        \item 10h Stworzenie podstawowych komponentów i dostosowanie ich do używania w innych (atomic design)
+        \item 3h Wielokontowość, generacja losowych danych
+        \item 30h Stworzenie podstawowych komponentów i dostosowanie ich do używania w innych (atomic design) 
+        \begin{enumerate}
+            \item 10h Atomy, molekuły
+            \item 3h Widget Porady
+            \item 6h Widget Wykres
+            \item 3h Widget Opinie
+            \item 3h Widget Rankig
+            \item 3h Widget Jakość
+            \item 2h Widget Zamówienia
+        \end{enumerate}
+        \item 5h Skomponowanie stron z gotowych elementów, nawigacja
         \item 4h Interakcja z wykresem
         \item 3h Przeglądanie dostępnych danych / filtrowanie / sortowanie
     \end{enumerate}
-    \item SHOULD
+    \item (19h) SHOULD
     \begin{enumerate}
         \item 5h Figma
-        \item 2h Wielojęzyczność
+        \item 5h Diagramy UML
+        \item 3h Wielojęzyczność
         \item 1h Light/Dark Mode
         \item 5h Dopracowanie CSS
     \end{enumerate}
-    \item COULD
+    \item (7h) COULD
     \begin{enumerate}
+        \item 2h zmiana danych w czasie na Widgetach (Opinie, Wykresy)
         \item 5h dodanie animacji
-        \item 3h Diagramy UML  
     \end{enumerate}
-    \item WON'T
+    \item (5h) WON'T
     \begin{enumerate}
-        \item ...
+        \item 5h Wykres: Dodanie serii z zeszłego okresu i zaznaczanie punktu
         
     \end{enumerate}
 \end{enumerate}
+
 \section{UML}
 % \includegraphics[scale=0.5]{src/routes.png}\\
 % \includegraphics[scale=0.5]{src/class.png}\\
@@ -79,6 +91,8 @@
 
 \section{Figma}
 \href{https://www.figma.com/file/6HQmM9ssZsjX2jbWcm6bmN/PGUI_PANEL_SPRZEDAWCY?node-id=0%3A1&t=sC3RxEjXZwQHD2Ov-0}{link do Figmy}
+\href{https://www.figma.com/file/6HQmM9ssZsjX2jbWcm6bmN/PGUI_PANEL_SPRZEDAWCY?node-id=0%3A1&t=509EkGfDzHvN31J9-0}{link do Figmy}
+\href{https://www.figma.com/proto/6HQmM9ssZsjX2jbWcm6bmN/PGUI_PANEL_SPRZEDAWCY?node-id=34%3A16652&scaling=contain&page-id=0%3A1&starting-point-node-id=34%3A16652}{link do Figmy - Prezentacja}
 \section{Projekt implementacji}
 \subsection{Biblioteki}
 \begin{enumerate}
