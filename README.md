@@ -1,5 +1,5 @@
 # Link do CodeSandbox
-Link: [https://codesandbox.io/p/github/adas77/panel/main](https://codesandbox.io/p/github/adas77/panel/main)
+Link: [https://codesandbox.io/p/github/adas77/panel/main](https://codesandbox.io/p/github/adas77/panel/main)\
 Dokumentacja w `/doc`
 # Getting Started with Create React App
 
