@@ -16,7 +16,6 @@ const WidgetAdvice = (props: Props) => {
             <Card children={money} title={lang.adviceCurrTitle} advice={lang.adviceCurr} />
             <Card children={world} title={lang.adviceWorldTitle} advice={lang.adviceWorld} />
         </div>
-
     )
 }
 
